@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../study/step_02_css_basic/css/lib/reset.css" />
+	<link rel="stylesheet" href="./nikon_02.css" />
+	<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+	<script src="../study/step_04_html5/js/jquery/jquery-1.12.3.min.js"></script>
+	<script src="../study/step_04_html5/js/jquery/jquery-migrate-1.3.0.min.js"></script>
+	<script src="../study/step_04_html5/js/jquery/jquery-ui.min.js"></script>
+	<title>Nikon Imaging Korea</title>
+	<style></style>
+	<script>
+	$(function(){
+		var g_site = $('.global_site_box'),
+			gsite_btn = $('.global_site').children('p');
+		g_site.hide();
+		gsite_btn.on('click', function(){
+			g_site.stop().slideToggle(600);
+		});//global_site_js
+		
+		var snb_hide = $('.snb'),
+			gnb_show = $('.gnb');		
+		snb_hide.hide();
+		gnb_show.on('mouseenter',function(){
+			snb_hide.stop().fadeIn();
+		}).on('mouseleave',function(){
+			snb_hide.stop().fadeOut();
+		});//gnb_js
+
+         var serch_btn = $('.serch');
+			input.html().find('input').css({'width':100+'px','height':'auto'});
+			serch_btn.on('mouseenter',function(){
+				input.stop().slideToggle(600);
+				
+			});
+			 
+		
+	});
+		
+
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header class="nikon_head">
+			<div class="head_box">
+				<h1><a href="#">logo</a></h1>
+				<div class="global_site">
+					<p>GLOBAL SITE<i class="fa fa-chevron-down"></i></p>
+					<ul class="global_site_box">
+                    	<li class="global_01"><a href="http://www.nikonusa.com">NICONUSA.COM</a><span></span></li>
+                    	<li class="global_02"><a href="http://www.en.nikon.ca">EN.NIKON.CA</a><span></span></li>
+                    	<li class="global_03"><a href="http://www.nikon.au">NIKON.AU</a><span></span></li>
+                    	<li class="global_04"><a href="http://www.nikon.fr">NIKON.FR</a><span></span></li>
+                    	<li class="global_05"><a href="http://www.nikon.de">NIKON.DE</a><span></span></li>
+                    	<li class="global_06"><a href="http://www.nikon.it">NIKON.IT</a><span></span></li>
+                    	<li class="global_07"><a href="http://www.nikon-image.com">NIKON.IMAGE.COM</a><span></span></li>
+                    	<li class="global_08"><a href="http://www.nikon.uk">NIKON.UK</a><span></span></li>
+                    	<li class="global_09"><a href="http://www.nikon.com">NIKON.COM</a><span></span></li>
+                	</ul>			    
+			</div>
+			<div class="utill_menu">
+			    <ul>
+			        <li class="login"><a href="#">로그인</a></li>
+			        <li class="join"><a href="#">회원가입</a></li>
+			        <li class="search"><input type="text" id="" name="" value=""><button class="serch"><i class="fa fa-search"></i></button></li>
+			    </ul>
+			</div>
+			</div>
+			<nav class="gnb_box">
+				<ul class="gnb">
+					<li class="gnb_menu_01"><a href="#">BRAND</a>
+						<ul class="snb">
+							<li><a href="#">Nikon 소개</a></li>
+							<li><a href="#">CEO 인사말</a></li>
+							<li><a href="#">경영이념</a></li>
+							<li><a href="#">채용정보</a></li>
+							<li><a href="#">홍보센터</a></li>
+							<li><a href="#">카탈로그</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_02"><a href="#">PRODUCT</a>
+						<ul class="snb">
+							<li><a href="#">D series</a></li>
+							<li><a href="#">NIKON 1</a></li>
+							<li><a href="#">DL</a></li>
+							<li><a href="#">COOLPIX</a></li>
+							<li><a href="#">NIKKOR</a></li>
+							<li><a href="#">SPEEDLIGHT</a></li>
+							<li><a href="#">Software</a></li>
+							<li><a href="#">쌍안경</a></li>
+							<li><a href="#">액세서리</a></li>
+							<li><a href="#">판매종료상품</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_03"><a href="#">COMMNUNITY</a>
+						<ul class="snb">
+							<li><a href="#">Photo School</a></li>
+							<li><a href="#">Riview</a></li>
+							<li><a href="#">Event</a></li>
+							<li><a href="#">Nikon Friends</a></li>
+							<li><a href="#">Special Contents</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_04"><a href="#">NPS</a>
+						<ul class="snb">
+							<li><a href="#">개요</a></li>
+							<li><a href="#">운영진소개</a></li>
+							<li><a href="#">My NPS</a></li>
+							<li><a href="#">Event Support</a></li>
+							<li><a href="#">Notice &amp; Event</a></li>
+							<li><a href="#">NPS Q&amp;A</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_05"><a href="#">SUPPORT</a>
+						<ul class="snb">
+							<li><a href="#">Membership</a></li>
+							<li><a href="#">카메라 활용정보</a></li>
+							<li><a href="#">온라인 서비스</a></li>
+							<li><a href="#">AS안내</a></li>
+							<li><a href="#">고객의소리</a></li>
+							<li><a href="#">고객서비스</a></li>
+							<li><a href="#">매장안내</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_06"><a href="#">E-SHOP</a>
+						<ul class="snb"></ul>
+					</li>
+				</ul>
+			</nav>
+		</header><!-----------.nikon_head------------->
+		<aside class="nikon_banner">
+		<h2>nikon 배너 광고 입니다.</h2>
+			<video autoplay="autoplay" loop="loop" muted="muted">
+ 			<source src="./video/PurePhotography_Nikon%20Df.mp4" type="video/mp4" />
+			</video>
+		</aside><!-------------.nikon_banner----------->
+		<section class="content_box">
+			<article class="content_01">
+			<div class="company">
+            <h2>NIKON IMAGING<br />KOREA</h2>
+            <ul>
+                <li class="company_img"></li>
+                <li class="company_text"><p><strong>니콘 이미징 코리아는</strong><br />광학기기전문 기업으로서 Nikon은 「신뢰와 창조」의 변하지 않는 테마를 바탕으로빛의 세계를 발견하는 끊임없는 탐구를 지속적으로 이어왔습니다.'앞으로 Nikon은 전 세계를 향하여 어떠한 가치를 제공할 것인가'를 중심으로2007년부터 새로운 Nikon을 만들기 위한비전으로「우리가 지향하는 모습 - 기대를 넘어 기대에 부응한다」를 제정하였습니다.</p></li>
+            </ul>
+            <span class="company_btn"><a href="#">기업 소개 바로가기</a></span>
+			</div>
+			</article><!------------.content_01------------>
+			<article class="content_02">
+				<h3>PRODUCT</h3>
+				<div class="product_main_box">
+					<ul class="product">
+						<li class="product_menu_01"><a href="#">Dseris</a></li>
+						<li class="product_menu_02"><a href="#">DL</a></li>
+						<li class="product_menu_03"><a href="#">Coolpix</a></li>
+						<li class="product_menu_04"><a href="#">Nikon1</a></li>
+					</ul>
+					<button type="button" class="left_btn"><i class="fa fa-chevron-left"></i></button>
+					<button type="button" class="right_btn"><i class="fa fa-chevron-right"></i></button>
+				</div>
+			</article><!--------------.content_02---------->
+			<article class="content_03">
+				<h3>Community</h3>
+				<div class="community_box">
+					<div class="special_contents">
+					    <ul class="special_con">
+							<li class="sc_img_01"><a href="#"></a></li>
+							<li class="sc_img_02"><a href="#"></a></li>
+							<li class="sc_img_03"><a href="#"></a></li>
+							<li class="sc_img_04"><a href="#"></a></li>
+						</ul>
+					<div class="special_text_box">
+						<p class="special_text"><strong>Special Contents</strong><br />김홍희 작가와 함께하는 사진방랑</p>
+						<span class="special_link"><a href="#">스페셜 콘텐츠 바로가기</a></span>
+					</div>
+					</div>
+					<div class="photo_school">
+						<ul class="photo_s">
+<!--
+							<li class="ps_img_01"><a href="#"><p class="photo_text">감성 충만한 사진 찍기</p></a></li>
+							<li class="ps_img_02"><a href="#"><p class="photo_text">맛있게 보이는 음식 사진의 비밀</p></a></li>
+							<li class="ps_img_03"><a href="#"><p class="photo_text">하늘공원에서 실습하는 야경사진</p></a></li>
+							<li class="ps_img_04"><a href="#"><p class="photo_text">여행 사진 잘 찍는 비결</p></a></li>
+-->
+						</ul>
+						<div class="ps_text_box">
+							<p class="ps_text"><strong>Nikon Photo School</strong><br />6월 니콘 포토스쿨에서 배워갈 수 있는 실전 촬영 팁!</p>
+							<span class="ps_link"><a href="#">강좌 신청</a></span>
+						</div>
+					</div>
+				</div>
+			</article><!-------------.content_03----------->
+			<article class="content_04">
+				<h4>EVENT &amp; REVIEW</h4>
+				<div class="event_box">
+				    <ul>
+				        <li class="event_link"><a href="#"><p>EVENT</p></a></li>
+				        <li class="d810_link"><a href="#"><video autoplay="autoplay" loop="loop" muted="muted">
+ 			<source src="./nikon/section_04/d801_video.mp4" type="video/mp4" />
+			</video></a><p class="event_text">천체 촬영에 대한<br /> 새로운 제안</p></li>
+				        <li class="e_shop_link"><a href="#"><p>E-SHOP</p></a></li>
+				    </ul>
+				</div>
+				<div class="review_box">
+				<h5>INSTAGRAM &#8226; REVIEW</h5>
+					<ul class="insta_review">
+						<li class="review_01"><a href="#"><img src="./nikon/section_04/insta_review/review_01.jpg" alt=""></a></li>
+						<li class="review_02"><a href="#"><img src="./nikon/section_04/insta_review/review_01.png" alt=""></a></li>
+						<li class="review_03"><a href="#"><img src="./nikon/section_04/insta_review/review_02.png" alt=""></a></li>
+						<li class="review_04"><a href="#"><img src="./nikon/section_04/insta_review/review_04.png" alt=""></a></li>
+						<li class="review_05"><a href="#"><img src="./nikon/section_04/insta_review/review_05.png" alt=""></a></li>
+						<li class="review_06"><a href="#"><img src="./nikon/section_04/insta_review/review_03.png" alt=""></a></li>
+						<li class="review_07"><a href="#"><img src="./nikon_01/nikon_bg/1387151450s.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</article>
+				<div class="section_navigation">
+					<ul>
+						<li class="section_nav_link"><a href=".nikon_banner"><i class="fa fa-circle-o-notch"></i></a></li>
+						<li class="section_nav_link"><a href=".content_01"><i class="fa fa-circle-o-notch"></i></a></li>
+						<li class="section_nav_link"><a href=".content_02"><i class="fa fa-circle-o-notch"></i></a></li>
+						<li class="section_nav_link"><a href=".content_03"><i class="fa fa-circle-o-notch"></i></a></li>
+						<li class="section_nav_link"><a href=".content_04"><i class="fa fa-circle-o-notch"></i></a></li>
+					</ul>
+				</div>
+		</section><!---------.content_box--------------->
+		<footer class="nikon_foot">
+			<div class="footer_box">
+				<h4>footer logo<a href="#"></a></h4>
+				<div class="sns_box">
+					<ul>
+						<li class="facebook"><a href="#"></a></li>
+						<li class="blog"><a href="#"></a></li>
+						<li class="instagram"><a href="#"></a></li>
+						<li class="youtube"><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="address_box">
+					<div class="address">
+						<ul>
+							<li class="add_01">(주) 니콘이미징코리아 대표이사:키타바타 히데유키 주소:서울시 중구 세종대로 39 대한상공회의소 12층</li>
+							<li class="add_02">사업자등록번호:104-81-98839 TEL:080-800-6600 FAX:02-2026-0029</li>
+						</ul>
+					</div>
+					<div class="copy_menu"></div>
+					<div class="copyright">ⓒ2016 NIKON IMAGING KOREA CO, LTD</div>
+				</div>
+			</div>
+		</footer>
+	</div><!---------#wrap--------->
+</body>
+</html>
