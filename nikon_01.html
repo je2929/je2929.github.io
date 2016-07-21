@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/lib/reset.css" />
+    <link rel="stylesheet" href="./nikon_01.css" />
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="./img/header/mob_logo.png" />
+    <script src="js/jquery/jquery-1.12.3.min.js"></script>
+    <script src="js/jquery/jquery-migrate-1.3.0.min.js"></script>
+    <script src="js/jquery/jquery-ui.min.js"></script>
+	<title>Nikon Imaging Korea</title>
+	<style></style>
+	<script>
+		                
+	$(document).ready(function(){
+		$(window).scroll(function(){ 
+			var scrollTop  = $(window).scrollTop();
+			var sc= $(this).scrollTop();
+			var win_h= $(this).height();
+			var header_h= $(".nikon_head").height();
+			var hope_h= win_h - header_h;
+			console.log(scrollTop); //스크롤탑 위치 확인용
+			
+			if(sc >= hope_h){
+				$(".nikon_head").addClass("head_scroll");
+				
+			}else{
+				$(".nikon_head").removeClass("head_scroll");
+			}
+			//if()
+			
+		});
+		var g_site = $('.global_site_list'),
+			gsite_btn = $('.global_site').children('p');
+		g_site.hide();
+		gsite_btn.on('click', function(){
+			g_site.stop().slideToggle(600);
+		});//global_site_js
+		
+		var snb_hide = $('.snb'),
+			gnb_show = $('.gnb_menu_list');		
+		snb_hide.hide();
+		gnb_show.on('mouseenter',function(){
+			snb_hide.stop().fadeIn(),
+                $(".gnb_box").addClass("snb_hover");
+		}).on('mouseleave',function(){
+			snb_hide.stop().fadeOut(),
+                $(".gnb_box").removeClass("snb_hover");
+		});//gnb_js
+
+		var serch_hide = $('input'),
+			serch_show = $('.serch_hide');
+		serch_hide.hide();
+		serch_show.on('click',function(){
+			serch_hide.stop().slideToggle(600);
+		});//serch_js
+		
+// 제품소개 슬라이드 배너						
+		slideBanner($('.product_slide_Box'));
+function slideBanner(banner){
+	var b_box = banner,
+			b_box_ul = b_box.find('.pdt_box'),
+			b_box_li = b_box.find('.pdt_list'),
+			b_box_li_width = b_box.find('.pdt_list').width();
+			l_btn = $('.banner_left_btn'),
+			r_btn = $('.banner_right_btn');
+
+	b_box_li.last().prependTo(b_box_ul);
+	l_btn.on('click', function(){
+		var b_li = b_box.find('.pdt_list');
+		b_li.first().stop().animate({'margin-left': b_box_li_width }, 400, function(){
+			b_li.css({'margin-left':0})
+					.last().prependTo(b_box_ul);
+		});
+	});
+	r_btn.on('click', function(){
+		var b_li = b_box.find('.pdt_list');
+		b_li.first().stop().animate({'margin-left': -b_box_li_width }, 400, function(){
+			b_li.css({'margin-left':0})
+					.first().appendTo(b_box_ul);
+			
+		});
+	});//product_banner_slide
+	
+}// slidebanner
+		
+//        function mobMenu(){
+//            var gnav = $('.gnb'),
+//                uti = $('.utill_menu'),
+//                globbal = $('.global_site'),
+//                gnb_h2 = $('.gnb_box').children('h2');
+//            gnav.hide();
+//            uti.hide();
+//            globbal.hide();
+//            gnb_h2.on('click',function(){
+//                gnav.stop().slideToggle(500);
+//            });
+//        };
+//
+//        function rwd(){
+//            var wd = $(window).width();
+//            console.log(wd);
+//            if(wd <=480){
+//                mobMenu(
+//						var snb_hide = $('.snb'),
+//			gnb_show = $('.gnb_box');		
+//		snb_hide.hide();
+//		gnb_show.on('click',function(){
+//			snb_hide.stop().slideToggle();
+//		});//gnb_js);
+//                
+//            }else if(480< wd && wd <= 640){
+//                mobMenu();
+//	
+//            }else if(641 < wd && wd<= 1024){
+//                mobMenu();
+//
+//            }else{
+//                
+//            };
+//        };
+//        rwd();
+                 var winW1 = parseInt($(window).width());
+        $(window).on('resize',function(){
+            if(winW1 != $(window).width()){
+            location.reload(); //새로고침
+           rwd(); 
+                };
+        });
+	});
+
+		
+	</script>
+</head>
+<body>
+	<div id="nikon_index_wrap">
+		<header>
+			<div class="nikon_head">
+				<h1><a href="#">logo</a></h1>
+				<div class="utill_menu">
+					<div class="global_site">
+						<p>GLOBAL SITE<i class="fa fa-chevron-down"></i></p>
+						<ul class="global_site_list">
+						<li class="global_01"><a href="http://www.nikonusa.com">NICONUSA.COM</a><span></span></li>
+                    	<li class="global_02"><a href="http://www.en.nikon.ca">EN.NIKON.CA</a><span></span></li>
+                    	<li class="global_03"><a href="http://www.nikon.au">NIKON.AU</a><span></span></li>
+                    	<li class="global_04"><a href="http://www.nikon.fr">NIKON.FR</a><span></span></li>
+                    	<li class="global_05"><a href="http://www.nikon.de">NIKON.DE</a><span></span></li>
+                    	<li class="global_06"><a href="http://www.nikon.it">NIKON.IT</a><span></span></li>
+                    	<li class="global_07"><a href="http://www.nikon-image.com">NIKON.IMAGE.COM</a><span></span></li>
+                    	<li class="global_08"><a href="http://www.nikon.uk">NIKON.UK</a><span></span></li>
+                    	<li class="global_09"><a href="http://www.nikon.com">NIKON.COM</a><span></span></li>
+						</ul>
+					</div><!--글로벌사이트-->
+					<div class="join_box">
+						<ul>
+						<li class="login"><a href="#">로그인</a></li>
+			            <li class="join"><a href="./nikon_join.html">회원가입</a></li>
+			            <li class="search"><i class="fa fa-search serch_hide"></i><label for="serch"></label><input type="text" id="serch" name="serch_box" value=""></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<nav class="gnb_box">
+				<div class="gnb">
+					<ul class="gnb_menu_list">
+						<li class="gnb_menu_01"><a href="">BRAND</a>
+							<ul class="snb">
+								<li><a href="./nikon_sub_01.html">Nikon 소개</a></li>
+								<li><a href="#">CEO 인사말</a></li>
+								<li><a href="#">경영이념</a></li>
+								<li><a href="#">채용정보</a></li>
+								<li><a href="#">홍보센터</a></li>
+								<li><a href="#">카탈로그</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu_02"><a href="#">PRODUCT</a>
+							<ul class="snb">
+								<li><a href="./nikon_sub_03.html">D series</a></li>
+								<li><a href="#">NIKON 1</a></li>
+								<li><a href="#">DL</a></li>
+								<li><a href="#">COOLPIX</a></li>
+								<li><a href="#">NIKKOR</a></li>
+								<li><a href="#">SPEEDLIGHT</a></li>
+								<li><a href="#">Software</a></li>
+								<li><a href="#">액세서리</a></li>
+								<li><a href="#">판매종료상품</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu_03"><a href="#">COMMNUNITY</a>
+							<ul class="snb">
+								<li><a href="./nikon_sub_02.html">Special Contents</a></li>
+								<li><a href="#">Photo School</a></li>
+								<li><a href="#">Riview</a></li>
+								<li><a href="#">Event</a></li>
+								<li><a href="#">Nikon Friends</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu_04"><a href="#">SUPPORT</a>
+							<ul class="snb">
+								<li><a href="#">Membership</a></li>
+								<li><a href="#">카메라 활용정보</a></li>
+								<li><a href="#">온라인 서비스</a></li>
+								<li><a href="#">AS안내</a></li>
+								<li><a href="#">고객의소리</a></li>
+								<li><a href="#">고객서비스</a></li>
+								<li><a href="nikon_sub_04.html">매장안내</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu_05"><a href="#">NPS</a>
+							<ul class="snb">
+								<li><a href="#">개요</a></li>
+								<li><a href="#">운영진소개</a></li>
+								<li><a href="#">My NPS</a></li>
+								<li><a href="#">Event Support</a></li>
+								<li><a href="#">Notice</a></li>
+								<li><a href="#">NPS Q&amp;A</a></li>
+							</ul>
+						</li>
+						<li class="gnb_menu_06"><a href="#">E-SHOP</a>
+							<ul class="snb"></ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<aside class="nikon_banner">
+			<h2>니콘 배너 광고 입니다.</h2>
+            <video autoplay="autoplay" loop="loop" muted="muted">
+ 			<source src="./img/banner/PurePhotography_Nikon%20Df.mp4" type="video/mp4" />
+			</video>
+			<div class="scroll_box">
+				<p><i class="fa fa-angle-down"></i></p>
+       			<p class="scroll_text">SCROLL</p>
+			</div>
+		</aside><!--니콘 배너 광고-->
+		<section>
+			<h2>니콘 컨텐츠 영역 입니다.</h2>
+			<article class="nikon_content_01">
+				<h3>NIKON IMAGING KOREA</h3>
+				<p>광학기기 전문 기업으로서 Nikon은 「신뢰와 창조」의 변하지 않는 테마를 바탕으로<br />빛의 세계를 발견하는 끊임 없는 탐구를 지속적으로 이어왔습니다.<br />'앞으로 Nikon은 전 세계를 향하여 어떠한 가치를 제공할 것인가'를 중심으로<br />2007년부터 새로운 Nikon을 만들기 위한 비전으로<br />「우리가 지향하는 모습 - 기대를 넘어 기대에 부응한다」를 제정하였습니다.</p>
+				<a href="nikon_sub_01.html">기업 소개 바로가기</a>
+			</article><!--article_01-->
+			<article class="nikon_content_02">
+				<h3>PRODUCT</h3>
+				<div class="product_box">
+					<div class="list_category">
+						<ul>
+							<li><a href="#">BEST</a></li>
+							<li><a href="#">NEW</a></li>
+							<li><a href="#">SERIES</a></li>
+							<li><a href="#">카테고리</a></li>
+						</ul>
+					</div>
+					<div class="banner_btn banner_left_btn"></div>
+					<div class="banner_btn banner_right_btn"></div>
+					<div class="product_slide_Box">
+						<ul class="pdt_box">
+							<li class="pdt_list">
+								<ul class="best_pdt">
+									<li><span class="pdt_img_01"></span><h5>D810</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_02"></span><h5>D750</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_03"></span><h5>j5</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_04"></span><h5>AF-s NIKKOR 24-70mm f/2.8E ED VR</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+								</ul>
+							</li>
+							<li class="pdt_list">
+								<ul class="new_pdt">
+									<li><span class="pdt_img_05"></span><h5>D5</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_06"></span><h5>D500</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_07"></span><h5>DL-24-500</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_08"></span><h5>Coolpix a100</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+								</ul>
+							</li>
+							<li class="pdt_list">
+								<ul>
+									<li><span class="pdt_img_09"></span><h5>Dseries</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_10"></span><h5>DL</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_11"></span><h5>Coolpix</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_12"></span><h5>Nikon1</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+								</ul>
+							</li>
+							<li class="pdt_list">
+								<ul>
+									<li><span class="pdt_img_13"></span><h5>SLR 카메라</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_14"></span><h5>미러리스 카메라</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_15"></span><h5>콤팩트카메라</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+									<li><span class="pdt_img_16"></span><h5>렌즈</h5><p>묘사의 한계를 초월한 3635만 화소</p><a href="#">자세히보기</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</article><!--article_02-->
+			<article class="nikon_content_03">
+				<h3>SPECIAL CONTENTS</h3>
+				<div class="sp_link">
+					<p>마이크로 사이트, 영상 등 Nikon의 제품에 관련된 다양한 콘텐츠를 감상하실 수 있습니다.</p>
+					<a href="nikon_sub_02.html">스페셜 컨텐츠 바로가기</a>
+				</div>
+			</article><!--article_03-->
+			<article class="nikon_content_04">
+				<h3>COMMUNITY</h3>
+				<div class="community_box">
+					<div class="event">
+						<h4>EVENT</h4>
+						<p>니콘 공식 온라인몰의 이벤트 혜택을 확인하세요</p>
+					</div>
+					<div class="photo_sc">
+						<h4>PHOTO SCHOOL</h4>
+						<p>니콘 포토스쿨이 여러분의 즐거운 사진 생활을 도와드립니다.</p>
+					</div>
+					<div class="infomation">
+						<h4>NPS</h4>
+						<p>Nikon Professional Services</p>
+					</div>
+					<div class="nps">
+						<h4>INFOMATION</h4>
+						<p>니콘이미징코리아의 서비스를 안내해 드립니다.</p>
+					</div>
+					<div class="store">
+						<ul>
+							<li><h5>Nikon Store</h5></li>
+							<li><p>니콘의 DSLR카메라, 미러러스 카메라, 렌즈, 컴팩트 카메라, 액세서리 등<br />모든 라인업을 갖춘 전문 매장을 방문해 보세요.</p></li>
+							<li><a href="./nikon_sub_04.html">FIND A STORE</a></li>
+						</ul>
+					</div>
+				</div>
+			</article><!--article_04-->
+		</section><!--nikon_main_section-->
+		<footer class="nikon_foot">
+			<h4>니콘 푸터 영역 입니다.</h4>
+			<div class="foot_site_map">
+				<ul>
+					<li><a href="#">다운로드센터</a></li>
+					<li><a href="#">개인정보취급방침</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">사이트맵</a></li>
+				</ul>
+			</div>
+			<div class="footer_box">
+				<div class="sns_box">
+					<ul>
+						<li class="facebook"><a href="#"><span>페이스북 바로가기 링크 입니다.</span></a></li>
+						<li class="blog"><a href="#"><span>블로그 바로가기 링크 입니다.</span></a></li>
+						<li class="instagram"><a href="#"><span>인스타그램 바로가기 링크 입니다.</span></a></li>
+						<li class="youtube"><a href="#"><span>유투브 바로가기 링크 입니다.</span></a></li>
+					</ul>
+				</div>
+			<div class="address_box">
+				<div class="address">
+					<ul>
+						<li class="add_01">(주) 니콘이미징코리아 대표이사:키타바타 히데유키 주소:서울시 중구 세종대로 39 대한상공회의소 12층</li>
+						<li class="add_02">사업자등록번호:104-81-98839 TEL:080-800-6600 FAX:02-2026-0029</li>
+					</ul>
+				</div>
+				<div class="copyright">ⓒ2016 NIKON IMAGING KOREA CO, LTD</div>
+			</div>
+			</div>
+		</footer><!--nikon_footer-->
+	</div><!--#nikon_index_wrap-->
+</body>
+</html>
