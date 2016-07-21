@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="./css/lib/reset.css" />
+	<link rel="stylesheet" href="./nikon_header.css" />
+	<link rel="stylesheet" href="./nikon_footer.css" />
+	<script src="./js/jquery/jquery-1.12.3.min.js"></script>
+	<script src="./js/jquery/jquery-migrate-1.3.0.min.js"></script>
+	<script src="./js/jquery/jquery-ui.min.js"></script>
+	<script src="./js/nikon_js/nikon_head.js"></script>
+	<title>nikon join</title>
+	<style>
+		.nikon_join{width:960px;height:1600px;margin:0 auto;}
+		h2{font-size:0;}
+		.membership{margin-top:50px;margin-left:70px;}
+		h3{width:150px;height:45px;border:1px solid #333;float:left;font:1.5rem "sans-serif";line-height:45px;text-align:center;background-color:#444;color:#ddd;}
+		.nikon_join h4{width:150px;height:30px;font:bold 1rem "맑은고딕";padding:10px;margin-top:30px}
+		.nikon_join h4::before{content:" ◎ ";color:#faad00;font-size:12px;padding:2px}
+        table, tr, th, td{border:none; border-collapse:collapse;border:1px solid #ddd;}
+		tr{width:100%;height:30px;}
+		th{width:100px;background-color:rgba(200,200,200,0.2);padding:0 20px;font-size:0.75rem;font-family:"맑은고딕";color:#353535;text-align: left;}
+		label{width:810px;}
+		td{width:810px;height:30px;padding:3px 7px;}
+		input{width:150px;height:25px;border:0.4px solid #ddd;box-sizing: border-box;}
+		button{width:120px;height:20px;font:bold 0.8rem "맑은고딕";line-height:100%;border:1px solid #aaa;cursor:pointer;}
+		select{width:80px;height:25px;border:0.4px solid #ddd;box-shadow:border-box;padding-left:5px}
+        .hypen{width:8px;height:1px;background-color: #aaa;display:inline-block;margin-bottom:3px;}
+        
+		.join_nav{width:600px;height:30px;float:left;margin-top:20px;}
+		.join_nav li a{float:left;font:bold 1rem "맑은고딕";color:#3a3a3a;text-decoration:none;border-bottom:1px solid #ddd;padding:4px 30px;}
+        .join_nav li a:hover{border-bottom:3px solid #ffe009;transition: 0.5s ease;transform:translateY(-8px)}
+		.join_text_box{width:100%;height:80px;clear:both;padding:30px;}
+		.text_strong{font:bold 1.25rem "맑은고딕";color:#3a3a3a;}
+		.text{font-size:1rem;font-family:"snas-serif","맑은고딕";color:#3a3a3a;margin-top:10px;text-indent:0.5rem;}
+		
+
+		
+		/* .join_essential_box */
+		.join_essential_box{width:100%;height:auto;border-top:1px solid #999;border-bottom:1px solid #999;}
+		.id_text{width:400px;height:20px;float:right;margin-right:110px;margin-top:5px;font-size:0.7rem;font-family:"맑은고딕";}
+		.id_text::before{content:" ◈ ";color:#111;}
+		.pwd_text{width:500px;height:20px;float:right;margin-right:130px;margin-top:5px;font-size:0.7rem;font-family:"맑은고딕";}
+		.pwd_text::before{content:" ◈ ";color:#111;}
+		.tel_text{width:350px;height:20px;float:right;margin-right:230px;margin-top:5px;font-size:0.75rem;font-family:"맑은고딕";}
+        .tel_td input{width:80px;}
+        .tel_td select{font-size:0.8rem;font-family:"맑은고딕";}
+		.post_box_td input{width:80px;height:25px;}		
+		.eMail_td input{width:150px;}
+        .eMail_td select{font-size:0.8rem;font-family:"sans-serif" "맑은고딕";}
+		.eMail_option{width:120px;font-size:0.9rem;font-family:"sans-serif";}		
+		.eMail_td_02 input{width:15px;height:12px;}
+		.eMail_td_02 label{width:80px;height:20px;display:inline-block;font:bold 0.8rem "맑은고딕";line-height:200%;margin-bottom:10px;}
+		.eMail_td_02 p{width:730px;height:20px;float:right;margin-right:70px;font-size:0.7rem;font-family:"맑은고딕";display:inline-block;}
+		.eMail_td_02 p::before{content:" ◈ ";color:#111;}
+        .add_btn{width:80px;}
+        .post_btn{width:100px;}
+		
+		
+		/* .join_option_box */
+		.join_option_box{width:100%;height:auto;border-top:1px solid #999;border-bottom:1px solid #999;}
+        .jop_box select{width:120px;font-size:0.8rem;font-family:"맑은고딕";}
+		
+		/* .join_survey_box */
+		.join_survey_box{width:100%;height:auto;border-top:1px solid #999;border-bottom:1px solid #999;}
+        .survey_check>td{width:700px;height:30px;display: block;}
+        .join_survey_box p{font:bold 0.8rem "맑은고딕";margin-top:20px;line-height:250%;border-top:1px solid #ddd}
+        .join_survey_box p:first-child{border-top:none;margin-top:10px;}
+        
+        .join_survey_box input{width:14px;height:12px;margin-left:14px;}
+        .join_survey_box label{width:50px;height:12px;font-size:0.8rem;font-family:"맑은고딕";line-height:100%;padding:5px;}
+        
+        .btn_box{width:300px;height:30px;margin:50px auto 0;}
+        .btn_box button{font:bold 0.75rem "맑은고딕";color:#3a3a3a;line-height:200%;width:100px;height:30px;border-radius:5%;}
+        .ok_btn{background-color:#ffe009;}
+		.btn_box button:hover{font:bold 0.75rem "맑은고딕";line-height:200%;background-image:linear-gradient(180deg, #887963, #0b0a09);color:#fff;transition:all 0.5s}
+        .cancle_btn{margin-left:30px;background-color:rgba(0,0,0,0.1);}
+
+
+	</style>
+	<script>
+    $(document).ready(function(){
+        nikonHead() //head.js
+	});
+    </script>
+</head>
+<body>
+       <header>
+            <div class="nikon_head">
+                <h1><a href="nikon_01.html" aria-title="니콘 로고 입니다."></a>logo</h1>
+				<div class="utill_menu">
+			    <div class="global_site">
+					<p>GLOBAL SITE<i class="fa fa-chevron-down"></i></p>
+					<ul class="global_site_list">
+                    	<li class="global_01"><a href="http://www.nikonusa.com">NICONUSA.COM</a><span></span></li>
+                    	<li class="global_02"><a href="http://www.en.nikon.ca">EN.NIKON.CA</a><span></span></li>
+                    	<li class="global_03"><a href="http://www.nikon.au">NIKON.AU</a><span></span></li>
+                    	<li class="global_04"><a href="http://www.nikon.fr">NIKON.FR</a><span></span></li>
+                    	<li class="global_05"><a href="http://www.nikon.de">NIKON.DE</a><span></span></li>
+                    	<li class="global_06"><a href="http://www.nikon.it">NIKON.IT</a><span></span></li>
+                    	<li class="global_07"><a href="http://www.nikon-image.com">NIKON.IMAGE.COM</a><span></span></li>
+                    	<li class="global_08"><a href="http://www.nikon.uk">NIKON.UK</a><span></span></li>
+                    	<li class="global_09"><a href="http://www.nikon.com">NIKON.COM</a><span></span></li>
+                	</ul>			    
+				</div>
+			    <div class="join_box">
+				    <ul>
+			            <li class="login"><a href="#">로그인</a></li>
+			            <li class="join"><a href="./nikon_join.html">회원가입</a></li>
+			            <li class="search"><i class="fa fa-search serch_hide"></i><label for="serch"></label><input type="text" id="serch" name="serch_box" value=""></li>
+			        </ul>
+			    </div>
+				</div>
+				</div>
+				<nav class="gnb_box">
+				<div class="gnb">
+				<ul class="gnb_menu_list">
+					<li class="gnb_menu_01"><a href="#">BRAND</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_01.html">Nikon 소개</a></li>
+							<li><a href="#">CEO 인사말</a></li>
+							<li><a href="#">경영이념</a></li>
+							<li><a href="#">채용정보</a></li>
+							<li><a href="#">홍보센터</a></li>
+							<li><a href="#">카탈로그</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_02"><a href="#">PRODUCT</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_03.html">D series</a></li>
+							<li><a href="#">NIKON 1</a></li>
+							<li><a href="#">DL</a></li>
+							<li><a href="#">COOLPIX</a></li>
+							<li><a href="#">NIKKOR</a></li>
+							<li><a href="#">SPEEDLIGHT</a></li>
+							<li><a href="#">Software</a></li>
+							<li><a href="#">액세서리</a></li>
+							<li><a href="#">판매종료상품</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_03"><a href="#">COMMNUNITY</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_02.html">Special Contents</a></li>
+							<li><a href="#">Photo School</a></li>
+							<li><a href="#">Riview</a></li>
+							<li><a href="#">Event</a></li>
+							<li><a href="#">Nikon Friends</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_04"><a href="#">SUPPORT</a>
+						<ul class="snb">
+							<li><a href="#">Membership</a></li>
+							<li><a href="#">카메라 활용정보</a></li>
+							<li><a href="#">온라인 서비스</a></li>
+							<li><a href="#">AS안내</a></li>
+							<li><a href="#">고객의소리</a></li>
+							<li><a href="#">고객서비스</a></li>
+							<li><a href="nikon_sub_04.html">매장안내</a></li>
+						</ul>
+				    </li>
+					<li class="gnb_menu_05"><a href="#">NPS</a>
+						<ul class="snb">
+							<li><a href="#">개요</a></li>
+							<li><a href="#">운영진소개</a></li>
+							<li><a href="#">My NPS</a></li>
+							<li><a href="#">Event Support</a></li>
+							<li><a href="#">Notice</a></li>
+							<li><a href="#">NPS Q&amp;A</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_06"><a href="#">E-SHOP</a>
+						<ul class="snb"></ul>
+					</li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+	<div class="nikon_join">
+		<h2>nikon 회원가입 페이지</h2>
+		<div class="membership">
+			<h3>Membership</h3>
+			<ul class="join_nav">
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li><a href="#">ID찾기</a></li>
+				<li><a href="#">비밀번호찾기</a></li>
+			</ul>
+		</div>
+		<div class="join_text_box">
+			<p class="text_strong"><strong>Nikon Imaging Korea</strong>에 오신것을 환영합니다.</p>
+			<p class="text">로그인을 하시면 Nikon Imaging Korea에서 다양한 서비스를 이용 하실 수 있습니다.</p>
+		</div>
+		<form action="#" method="post">
+		<div>
+		<h4>필수 입력 사항</h4>
+		<div class="join_essential_box">
+		<table summery="회원가입 필수 입력사항">
+			<tr>
+				<th><label for="id">아이디</label></th>
+				<td>
+					<input type="text" name="username" id="id" value="" />
+					<button type="button">아이디 중복확인</button>
+					<p class="id_text">띄어쓰기 없는 영문, 5자~12자 내외로 입력해 주세요.</p>
+				</td>
+
+			</tr>
+			<tr>
+				<th><label for="password">비밀번호</label></th>
+				<td><input type="password" id="password" name="pwd" value="" />
+				<p class="pwd_text">비밀번호는 영문과 숫자가 혼합된 4~12자 내외로 입력해 주세요. (특수문자 사용 가능)</p>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="password">비밀번호 확인</label></th>
+				<td><input type="password" id="password_01" name="pwd" value="" /></td>
+			</tr>
+			<tr>
+				<th><label for="tel">휴대전화번호</label></th>
+				<td class="tel_td"><select name="tel_option" id="option">
+					<option value="010">010</option>
+					<option value="011">011</option>
+					<option value="017">017</option>
+					<option value="018">018</option>
+					<option value="019">019</option>
+				</select>
+				<span class="hypen"><!------hypen-------></span>
+				<input type="text" id="tel_02" name="tel_num_02" value="" />
+				<span class="hypen"><!------hypen-------></span>
+				<input type="text" id="tel_03" name="te;_num_03" value="" />
+				</td>
+			</tr>
+			<tr>
+				<th><label for="tel">전화번호</label></th>
+				<td><input type="text" id="tel" name="tel_nem" value="" />
+				<p class="tel_text">" - "빼고, 지역번호를 포함하여 입력하세요. (ex) 0212341234</p>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="post_num">우편번호</label></th>
+				<td class="post_box_td"><input type="text" id="post_num" nmae="post" value="" />
+				<input type="text" id="post_num_02" name="post" value="" />
+				<button type="button" class="post_btn">우편번호 찾기</button>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="address">주소</label></th>
+				<td><input type="text" id="address" name="addressBox_01" value="" />
+				<input type="text" id="address_02" name="addressBox_02" value="" />
+				<button type="button" class="add_btn">주소 검색</button>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="e-mail">E-mail</label></th>
+				<td class="eMail_td"><input type="text" id="e-mail" name="e-mail_box" value="" /><span> @ </span>
+				<input type="text" id="e-mail_02" name="e-mail_box_02" value="" />			
+				<select name="e-mail_option" id="mail_option" class="eMail_option">
+					<option value="직접입력">직접입력</option>
+					<option value="naver.com">naver.com</option>
+					<option value="hanmail.net">hanmail.net</option>
+					<option value="nate.com">nate.com</option>
+					<option value="gmail.com">gmail.com</option>
+					<option value="dreamwiz.com">dreamwiz.com</option>
+					<option value="yahoo.co.kr">yahoo.co.kr</option>
+					<option value="lycos.co.kr">lycos.co.kr</option>
+					<option value="hotmail.com">hotmail.com</option>
+					<option value="empas.com">empas.com</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="e-mail">E-mail 수신거부</label></th>
+				<td class="eMail_td_02"><input type="radio" id="e_mail" name="e_mail" value="" />
+				<label for="e_mail">수신</label>
+				<input type="radio" id="e_mail_02" name="e_mail_02" value="" />
+				<label for="e_mail_02">수신 거부</label>
+				<p>니콘이미징코리아에서 진행되는 이벤트 안내, 쿠폰 등의 메일을 받아보실 수 있습니다.</p>
+				<p>니콘 e-shop의 거래정보 (결제/교환/환불)등과 관련된 내용은 고객님의 거래안전을 위하여 수신동의 여부와 관계없이 발송됩니다.</p>				
+				</td>
+			</tr>
+		</table>
+		</div>
+		</div>
+		<div>
+		<h4>선택 입력 정보</h4>
+		<div class="join_option_box">
+		<table summery="회원가입 선택 입력 정보">
+			<tr>
+				<th><label for="user_job">직업</label></th>
+				<td class="jop_box"><select name="job" id="user_job">
+					<option value="선택하세요">선택하세요</option>
+					<option value="무직">무직</option>
+					<option value="학생">학생</option>
+					<option value="공무원">공무원</option>
+					<option value="서비스업">서비스업</option>
+					<option value="교육">교육</option>
+					<option value="금융업">금융업</option>
+					<option value="유통업">유통업</option>
+					<option value="예술">예술</option>
+					<option value="의료">의료</option>
+					<option value="기타">기타</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="com_name">회사명</label></th>
+				<td><input type="text" id="com_name" name="com" value="" />
+				</td>
+			</tr>
+			<tr>
+				<th><label for="com_post_num_01">회사 우편번호</label></th>
+				<td><input type="text" id="com_post_num_01" name="com_post" value="" />
+				<span class="hypen"><!------------></span>
+				<input type="text" id="com_post_num_02" name="com_post" value="" />
+				<button type="button" class="post_btn">우편번호 찾기</button>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="com_address">회사 주소</label></th>
+				<td><input type="text" id="com_address" name="com_add" value="" />
+				</td>
+			</tr>
+			<tr>
+				<th><label for="com_tel">회사 연락처</label></th>
+				<td><input type="text" id="com_tel" name="com_t" value="" />
+				</td>
+			</tr>
+			</table>
+		</div>
+        </div>
+        <div>
+        <h4>설문조사</h4>
+		<div class="join_survey_box">
+            <table summery="설문조사 입력 정보">
+		        <tr>
+		            <th class="survey_check"><label for="">설문조사</label></th>
+                    <td>
+                        <p>1. 고객님께서는 결혼을 하셨습니까?</p>
+		                <input type="checkbox" id="single" name="married_n" value="" /><label for="single">미혼</label>
+                        <input type="checkbox" id="married" name="married_y" value="" /><label for="married">기혼</label>
+                        <p>2. 만약 결혼을 하셨다면 자녀가 계신가요?</p>
+		                <input type="checkbox" id="child_yes" name="children_y" value="" /><label for="child_yes">있다.</label>
+                        <input type="checkbox" id="child_no" name="children_n" value="" /><label for="child_no">없다.</label>
+
+                        <p>3. 자주 촬영하는 사진은 무엇인가요? (중복 2개까지 가능)</p>
+                        <input type="checkbox" id="family" name="fam" value="" /><label for="family">가족</label>
+                        <input type="checkbox" id="friend" name="frd" value="" /><label for="friend">친구</label>
+                        <input type="checkbox" id="night_view" name="view" value="" /><label for="night_view">도시야경</label>
+                        <input type="checkbox" id="plants" name="plt" value="" /><label for="plants">식물</label>
+                        <input type="checkbox" id="sports" name="sprt" value="" /><label for="sports">스포츠</label>
+                        <input type="checkbox" id="cook" name="ck" value="" /><label for="cook">요리</label>
+                        <input type="checkbox" id="product" name="pdt" value="" /><label for="product">상품</label>
+		                <input type="checkbox" id="etc" name="e" value="" /><label for="etc">기타</label><br />
+                           
+                        <p>4. 고객님께서는 관심있는 Nikon의 이슈는 무엇인가요? (중복 2개까지 가능)</p>
+                        <input type="checkbox" id="new_product" name="n_p" value="" /><label for="new_product">신제품</label>
+                        <input type="checkbox" id="photo" name="pt" value="" /><label for="photo">사진 강좌</label>
+                        <input type="checkbox" id="photogrp" name="ptg" value="" /><label for="photogrp">출사</label>
+                        <input type="checkbox" id="event" name="evnt" value="" /><label for="event">이벤트</label>
+                        <input type="checkbox" id="riview" name="rv" value="" /><label for="riview">상품 리뷰</label>
+                        <input type="checkbox" id="moving" name="move" value="" /><label for="moving">무빙 스튜디오</label>
+                        <input type="checkbox" id="recruit" name="recu" value="" /><label for="recruit">채용 정보</label>
+                        <input type="checkbox" id="sns" name="sns_01" value="" /><label for="sns">sns 관련 정보</label>
+                                       
+                        <p>5. 고객님의 취미는 무엇인가요? (중복 2개까지 가능)</p>
+                        <input type="checkbox" id="fashion" name="" value="" /><label for="fashion">패션</label>
+                        <input type="checkbox" id="beauty" name="beau" value="" /><label for="beauty">뷰티</label>
+                        <input type="checkbox" id="sport" name="spt" value="" /><label for="sport">운동</label>
+                        <input type="checkbox" id="restaurant" name="restr" value="" /><label for="restaurant">맛집</label>
+                        <input type="checkbox" id="photo_cut" name="photo_c" value="" /><label for="photo_cut">사진촬영</label>
+                        <input type="checkbox" id="i_surfing" name="surfing" value="" /><label for="i_surfing">인터넷 서핑</label>
+                        <input type="checkbox" id="reading" name="book_read" value="" /><label for="reading">독서</label>
+                        <input type="checkbox" id="music" name="" value="music_01" /><label for="music">음악 감상</label>
+                        <input type="checkbox" id="etc_02" name="etc" value="" /><label for="etc_02">기타</label>
+                    </td>
+		        </tr>
+		    </table>
+		 </div>
+        </div>
+         <div class="btn_box">
+		     <button type="submit" class="ok_btn">확인</button>
+		     <button type="reset" class="cancle_btn">취소</button>
+		 </div>
+        </form>
+</div>
+        <footer class="nikon_foot">
+        <div class="foot_site_map">
+		    <ul>
+		          <li><a href="#">다운로드센터</a></li>
+			      <li><a href="#">개인정보취급방침</a></li>
+			      <li><a href="#">이용약관</a></li>
+			      <li><a href="#">사이트맵</a></li>
+			</ul>
+    	</div>
+			<div class="footer_box">
+				<h4>footer logo<a href="#"></a></h4>
+				<div class="sns_box">
+					<ul>
+						<li class="facebook"><a href="#"><span>페이스북 바로가기 링크 입니다.</span></a></li>
+						<li class="blog"><a href="#"><span>블로그 바로가기 링크 입니다.</span></a></li>
+						<li class="instagram"><a href="#"><span>인스타그램 바로가기 링크 입니다.</span></a></li>
+						<li class="youtube"><a href="#"><span>유투브 바로가기 링크 입니다.</span></a></li>
+					</ul>
+				</div>
+				<div class="address_box">
+					<div class="address">
+						<ul>
+							<li class="add_01">(주) 니콘이미징코리아 대표이사:키타바타 히데유키 주소:서울시 중구 세종대로 39 대한상공회의소 12층</li>
+							<li class="add_02">사업자등록번호:104-81-98839 TEL:080-800-6600 FAX:02-2026-0029</li>
+						</ul>
+					</div>
+					<div class="copy_menu"></div>
+					<div class="copyright">ⓒ2016 NIKON IMAGING KOREA CO, LTD</div>
+				</div>
+			</div>
+		</footer>
+</body>
+</html>

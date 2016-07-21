@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="./css/lib/reset.css" />
+	<link rel="shortcut icon" href="./img/header/mob_logo.png" />
+	<link rel="stylesheet" href="./nikon_header.css" />
+	<link rel="stylesheet" href="./nikon_footer.css" />
+	<script src="./js/jquery/jquery-1.12.3.min.js"></script>
+	<script src="./js/jquery/jquery-migrate-1.3.0.min.js"></script>
+	<script src="./js/jquery/jquery-ui.min.js"></script>
+	<script src="./js/nikon_js/nikon_head.js"></script>
+	<title>Nikon Imaging Korea</title>
+	<style>
+        
+html body{overflow-x:hidden}
+
+		@media screen and (min-width:1025px){
+        .sub_02_wrap{width:100%;height:auto;}
+        header{background-color:rgba(0,0,0,0.9);}
+
+     /*sub_section*/
+		.sub_fixed_box article{width:100%;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-position:center;}
+        .scrolltop_box p{position:fixed;top:100px;width:150px;height:30px;}
+
+        /* article_01 */
+        section h2{font-size:0;}
+        .sub_fixed_img_01{height:900px;background-image:url(./sub_02/nikkor/c4.jpg);}
+        .fixed_text_box{width:440px;height:140px;margin:0 auto;position:relative;top:250px;left:0;z-index:0;}
+        .fixed_text_box h3{font:3rem "arial";border-bottom:1.5px solid #cbcbcb;padding-bottom:30px;color:#cbcbcb;text-align:center;}
+        .fixed_text_box p{font:bold 1.125rem "Nanum Gothic";color:#cbcbcb;text-align:center;padding:20px;}
+            
+        /* article_02 하와이사진전 */
+		.sub_fixed_img_02{height:1200px;background:url(./sub_02/hawaii/7_middle.jpg);}
+        .contents_hawaii{width:300px;height:50px;position:relative;top:45%;left:40%;z-index:0;cursor:pointer;}
+        .contents_hawaii h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+        /* article_03 천체촬영 */
+        .sub_fixed_img_03{height:1200px;background:url(./sub_02/heavenly_body/aaa.jpg)}
+        .contents_heavenly_body{width:300px;height:50px;position:relative;top:40%;left:40%;z-index:0;cursor:pointer;}
+        .contents_heavenly_body h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+    
+        /* article_04 니코르 */  
+		.sub_fixed_img_04{height:1200px;background:url(./sub_02/nikkor/c5_1.jpg);}
+        .contents_nikkor{width:300px;height:50px;position:relative;top:40%;left:40%;z-index:0;cursor:pointer;}
+        .contents_nikkor h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+		
+        /* article_05  */
+        .sub_fixed_img_05{height:1200px;background:url(./sub_02/hawaii/14_middle.jpg);}
+		.contents_photographer{width:100%;height:400px;background-color:#212121}
+		.contents_photographer h3{font:bold 1.5rem "돋움";color:#bbb;text-align:center;padding:20px;}
+		.contents_photographer h3::before{content:"“ ";font-size:2rem;}
+		.contents_photographer h3::after{content:" ”";font-size:2rem;}
+		.photographer_list_box{width:700px;height:auto; margin:0 auto;padding:20px 0;}
+		.photographer_list_box ul{width: 100%; height: auto;}        
+		.photographer_list_box ul::after{content: ""; display: block; clear: both;}        
+		.photographer_list_box ul li{width:170px; height:auto; float: left;transition:all 0.5s; margin-right:5px;}  .photographer_list_box ul li:last-child{margin-right:0;}        
+		.photographer_list_box ul li a{width:100%;height:100%;border-bottom:3px solid #bbb;border-top:3px solid #3a3a3a;
+            float:left; box-sizing:border-box; border-radius:20%; box-sizing: border-box;  overflow:hidden; background-position:center;background-size:100%;text-decoration:none;}
+        .photographer_01{background-image:url(./sub_02/photographer/interview01.png)}
+        .photographer_02{background-image:url(./sub_02/photographer/interview02.png)}
+        .photographer_03{background-image:url(./sub_02/photographer/interview03.png)}
+        .photographer_04{background-image:url(./sub_02/photographer/interview04.png)}
+        .photographer_list_box ul span{width:170px;height:170px;display:block;font:bold 1.125rem "Nanum Barun Gothic";color:#fff;background-color:#000;opacity:0.4;text-align:center;line-height:260px;border-radius:20%;box-sizing:border-box;overflow:hidden;}
+        .photographer_list_box ul li:hover{transform:scale(1.1);transition:all 1s;}
+
+        
+        .photographer_interview{width:500px;height:200px;overflow:hidden;margin:0 auto;padding-top:10px;}
+        .photographer_interview ul{width:100%;position:relative;}
+		.photographer_interview ul li{width:500px;height:200px;margin-left:-100%;}
+  
+        .photographer_interview ul li p{font:bold 0.9rem "Nanum Barun Gothic";color:#bbb;transition:all 1s;}
+        .interview_01{position:absolute;top:0;left:0;z-index:0;}
+        .interview_02{position:absolute;top:0;left:0;z-index:0;}
+        .interview_03{position:absolute;top:0;left:0;z-index:0;}
+        .interview_04{position:absolute;top:0;left:0;z-index:0;}
+
+
+        /* article_05_________video*/
+		.photographer_video{width:658px;height:auto;margin:0 auto;margin-top:60px;box-shadow:0.1rem 0.5rem 1.2rem #000;}
+		.photographer_video video{width:650px;height:auto;}
+
+			}
+		
+		@media screen and (min-width:768px) and (max-width:1024px){
+        .sub_02_wrap{width:100%;height:auto;}
+        header{background-color:rgba(0,0,0,0.5);}
+
+     /*sub_section*/
+		.sub_fixed_box article{width:100%;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-position:center;}
+        .scrolltop_box p{position:fixed;top:100px;width:150px;height:30px;}
+
+        /* article_01 */
+        section h2{font-size:0;}
+        .sub_fixed_img_01{height:900px;background-image:url(./sub_02/nikkor/c4.jpg);}
+        .fixed_text_box{width:440px;height:140px;margin:0 auto;position:relative;top:250px;left:0;z-index:0;}
+        .fixed_text_box h3{font:3rem "arial";border-bottom:1.5px solid #cbcbcb;padding-bottom:30px;color:#cbcbcb;text-align:center;}
+        .fixed_text_box p{font:bold 1.125rem "Nanum Gothic";color:#cbcbcb;text-align:center;padding:20px;}
+            
+        /* article_02 하와이사진전 */
+		.sub_fixed_img_02{height:1200px;background:url(./sub_02/hawaii/7_middle.jpg);}
+        .contents_hawaii{width:300px;height:50px;position:relative;top:45%;left:34%;z-index:0;cursor:pointer;}
+        .contents_hawaii h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+        /* article_03 천체촬영 */
+        .sub_fixed_img_03{height:1200px;background:url(./sub_02/heavenly_body/aaa.jpg)}
+        .contents_heavenly_body{width:300px;height:50px;position:relative;top:40%;left:34%;z-index:0;cursor:pointer;}
+        .contents_heavenly_body h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+    
+        /* article_04 니코르 */  
+		.sub_fixed_img_04{height:1200px;background:url(./sub_02/nikkor/c5_1.jpg);}
+        .contents_nikkor{width:300px;height:50px;position:relative;top:40%;left:34%;z-index:0;cursor:pointer;}
+        .contents_nikkor h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+		
+        /* article_05  */
+        .sub_fixed_img_05{height:1200px;background:url(./sub_02/hawaii/14_middle.jpg);}
+		.contents_photographer{width:100%;height:400px;background-color:#212121}
+		.contents_photographer h3{font:bold 1.5rem "돋움";color:#bbb;text-align:center;padding:20px;}
+		.contents_photographer h3::before{content:"“ ";font-size:2rem;}
+		.contents_photographer h3::after{content:" ”";font-size:2rem;}
+		.photographer_list_box{width:700px;height:auto; margin:0 auto;padding:20px 0;}
+		.photographer_list_box ul{width: 100%; height: auto;}        
+		.photographer_list_box ul::after{content: ""; display: block; clear: both;}        
+		.photographer_list_box ul li{width:170px; height:auto; float: left;transition:all 0.5s; margin-right:5px;}  .photographer_list_box ul li:last-child{margin-right:0;}        
+		.photographer_list_box ul li a{width:100%;height:100%;border-bottom:3px solid #bbb;border-top:3px solid #3a3a3a;
+            float:left; box-sizing:border-box; border-radius:20%; box-sizing: border-box;  overflow:hidden; background-position:center;background-size:100%;text-decoration:none;}
+        .photographer_01{background-image:url(./sub_02/photographer/interview01.png)}
+        .photographer_02{background-image:url(./sub_02/photographer/interview02.png)}
+        .photographer_03{background-image:url(./sub_02/photographer/interview03.png)}
+        .photographer_04{background-image:url(./sub_02/photographer/interview04.png)}
+        .photographer_list_box ul span{width:170px;height:170px;display:block;font:bold 1.125rem "Nanum Barun Gothic";color:#fff;background-color:#000;opacity:0.4;text-align:center;line-height:260px;border-radius:20%;box-sizing:border-box;overflow:hidden;}
+        .photographer_list_box ul li:hover{transform:scale(1.1);transition:all 1s;}
+
+        
+        .photographer_interview{width:500px;height:200px;overflow:hidden;margin:0 auto;padding-top:10px;}
+        .photographer_interview ul{width:100%;position:relative;}
+		.photographer_interview ul li{width:500px;height:200px;margin-left:-100%;}
+  
+        .photographer_interview ul li p{font:bold 0.9rem "Nanum Barun Gothic";color:#bbb;transition:all 1s;}
+        .interview_01{position:absolute;top:0;left:0;z-index:0;}
+        .interview_02{position:absolute;top:0;left:0;z-index:0;}
+        .interview_03{position:absolute;top:0;left:0;z-index:0;}
+        .interview_04{position:absolute;top:0;left:0;z-index:0;}
+
+
+        /* article_05_________video*/
+		.photographer_video{width:658px;height:auto;margin:0 auto;margin-top:60px;box-shadow:0.1rem 0.5rem 1.2rem #000;}
+		.photographer_video video{width:650px;height:auto;}
+
+			}
+		
+		@media screen and (min-width:481px) and (max-width:767px){
+        .sub_02_wrap{width:100%;height:auto;}
+        header{background-color:rgba(0,0,0,0.5);}
+
+     /*sub_section*/
+		.sub_fixed_box article{width:100%;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-position:center;}
+        .scrolltop_box p{position:fixed;top:100px;width:150px;height:30px;}
+
+        /* article_01 */
+        section h2{font-size:0;}
+        .sub_fixed_img_01{height:900px;background-image:url(./sub_02/nikkor/c4.jpg);}
+        .fixed_text_box{width:440px;height:140px;margin:0 auto;position:relative;top:250px;left:0;z-index:0;}
+        .fixed_text_box h3{font:3rem "arial";border-bottom:1.5px solid #cbcbcb;padding-bottom:30px;color:#cbcbcb;text-align:center;}
+        .fixed_text_box p{font:bold 1.125rem "Nanum Gothic";color:#cbcbcb;text-align:center;padding:20px;}
+            
+        /* article_02 하와이사진전 */
+		.sub_fixed_img_02{height:1200px;background:url(./sub_02/hawaii/7_middle.jpg);}
+        .contents_hawaii{width:300px;height:50px;position:relative;top:45%;left:30%;z-index:0;cursor:pointer;}
+        .contents_hawaii h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+        /* article_03 천체촬영 */
+        .sub_fixed_img_03{height:1200px;background:url(./sub_02/heavenly_body/aaa.jpg)}
+        .contents_heavenly_body{width:300px;height:50px;position:relative;top:40%;left:30%;z-index:0;cursor:pointer;}
+        .contents_heavenly_body h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+    
+        /* article_04 니코르 */  
+		.sub_fixed_img_04{height:1200px;background:url(./sub_02/nikkor/c5_1.jpg);}
+        .contents_nikkor{width:300px;height:50px;position:relative;top:40%;left:30%;z-index:0;cursor:pointer;}
+        .contents_nikkor h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+		
+        /* article_05  */
+        .sub_fixed_img_05{height:1200px;background:url(./sub_02/hawaii/14_middle.jpg);}
+		.contents_photographer{width:100%;height:400px;background-color:#212121}
+		.contents_photographer h3{font:bold 1.5rem "돋움";color:#bbb;text-align:center;padding:20px;}
+		.contents_photographer h3::before{content:"“ ";font-size:2rem;}
+		.contents_photographer h3::after{content:" ”";font-size:2rem;}
+		.photographer_list_box{width:700px;height:auto; margin:0 auto;padding:20px 0;}
+		.photographer_list_box ul{width: 100%; height: auto;}        
+		.photographer_list_box ul::after{content: ""; display: block; clear: both;}        
+		.photographer_list_box ul li{width:170px; height:auto; float: left;transition:all 0.5s; margin-right:5px;}  .photographer_list_box ul li:last-child{margin-right:0;}        
+		.photographer_list_box ul li a{width:100%;height:100%;border-bottom:3px solid #bbb;border-top:3px solid #3a3a3a;
+            float:left; box-sizing:border-box; border-radius:20%; box-sizing: border-box;  overflow:hidden; background-position:center;background-size:100%;text-decoration:none;}
+        .photographer_01{background-image:url(./sub_02/photographer/interview01.png)}
+        .photographer_02{background-image:url(./sub_02/photographer/interview02.png)}
+        .photographer_03{background-image:url(./sub_02/photographer/interview03.png)}
+        .photographer_04{background-image:url(./sub_02/photographer/interview04.png)}
+        .photographer_list_box ul span{width:170px;height:170px;display:block;font:bold 1.125rem "Nanum Barun Gothic";color:#fff;background-color:#000;opacity:0.4;text-align:center;line-height:260px;border-radius:20%;box-sizing:border-box;overflow:hidden;}
+        .photographer_list_box ul li:hover{transform:scale(1.1);transition:all 1s;}
+
+        
+        .photographer_interview{width:500px;height:200px;overflow:hidden;margin:0 auto;padding-top:10px;}
+        .photographer_interview ul{width:100%;position:relative;}
+		.photographer_interview ul li{width:500px;height:200px;margin-left:-100%;}
+  
+        .photographer_interview ul li p{font:bold 0.9rem "Nanum Barun Gothic";color:#bbb;transition:all 1s;}
+        .interview_01{position:absolute;top:0;left:0;z-index:0;}
+        .interview_02{position:absolute;top:0;left:0;z-index:0;}
+        .interview_03{position:absolute;top:0;left:0;z-index:0;}
+        .interview_04{position:absolute;top:0;left:0;z-index:0;}
+
+
+        /* article_05_________video*/
+		.photographer_video{width:658px;height:auto;margin:0 auto;margin-top:60px;box-shadow:0.1rem 0.5rem 1.2rem #000;}
+		.photographer_video video{width:650px;height:auto;}
+
+			}
+		
+		@media screen and (max-width:480px){
+        .sub_02_wrap{width:100%;height:auto;}
+        header{background-color:rgba(0,0,0,0.5);}
+
+     /*sub_section*/
+		.sub_fixed_box article{width:480px;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-position:center;}
+        .scrolltop_box p{position:fixed;top:100px;width:150px;height:30px;}
+
+        /* article_01 */
+        section h2{font-size:0;}
+        .sub_fixed_img_01{height:320px;background-image:url(./sub_02/nikkor/c4.jpg);}
+        .fixed_text_box{width:300px;height:140px;margin:0 auto;position:relative;top:100px;left:0;z-index:0;}
+        .fixed_text_box h3{font:2rem "arial";border-bottom:1.5px solid #cbcbcb;padding-bottom:10px;color:#cbcbcb;text-align:center;}
+        .fixed_text_box p{font:bold 1rem "Nanum Gothic";color:#cbcbcb;text-align:center;padding:10px;}
+            
+        /* article_02 하와이사진전 */
+		.sub_fixed_img_02{height:320px;background:url(./sub_02/hawaii/7_middle.jpg);}
+        .contents_hawaii{width:300px;height:50px;position:relative;top:45%;left:15%;z-index:0;cursor:pointer;}
+        .contents_hawaii h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+        /* article_03 천체촬영 */
+        .sub_fixed_img_03{height:320px;background:url(./sub_02/heavenly_body/aaa.jpg)}
+        .contents_heavenly_body{width:300px;height:50px;position:relative;top:40%;left:15%;z-index:0;cursor:pointer;}
+        .contents_heavenly_body h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+    
+        /* article_04 니코르 */  
+		.sub_fixed_img_04{height:320px;background:url(./sub_02/nikkor/c5_1.jpg);}
+        .contents_nikkor{width:300px;height:50px;position:relative;top:40%;left:15%;z-index:0;cursor:pointer;}
+        .contents_nikkor h3{font:bold 1.5rem "Nanum Gothic";color:#eee;border:2px solid #eee;margin:0 auto;padding:20px;text-align:center;}
+
+
+		
+        /* article_05  */
+        .sub_fixed_img_05{height:320px;background:url(./sub_02/hawaii/14_middle.jpg);}
+		.contents_photographer{width:100%;height:400px;background-color:#212121}
+		.contents_photographer h3{font:bold 1.5rem "돋움";color:#bbb;text-align:center;padding:20px;}
+		.contents_photographer h3::before{content:"“ ";font-size:2rem;}
+		.contents_photographer h3::after{content:" ”";font-size:2rem;}
+		.photographer_list_box{width:700px;height:auto; margin:0 auto;padding:20px 0;}
+		.photographer_list_box ul{width: 100%; height: auto;}        
+		.photographer_list_box ul::after{content: ""; display: block; clear: both;}        
+		.photographer_list_box ul li{width:170px; height:auto; float: left;transition:all 0.5s; margin-right:5px;}  .photographer_list_box ul li:last-child{margin-right:0;}        
+		.photographer_list_box ul li a{width:100%;height:100%;border-bottom:3px solid #bbb;border-top:3px solid #3a3a3a;
+            float:left; box-sizing:border-box; border-radius:20%; box-sizing: border-box;  overflow:hidden; background-position:center;background-size:100%;text-decoration:none;}
+        .photographer_01{background-image:url(./sub_02/photographer/interview01.png)}
+        .photographer_02{background-image:url(./sub_02/photographer/interview02.png)}
+        .photographer_03{background-image:url(./sub_02/photographer/interview03.png)}
+        .photographer_04{background-image:url(./sub_02/photographer/interview04.png)}
+        .photographer_list_box ul span{width:170px;height:170px;display:block;font:bold 1.125rem "Nanum Barun Gothic";color:#fff;background-color:#000;opacity:0.4;text-align:center;line-height:260px;border-radius:20%;box-sizing:border-box;overflow:hidden;}
+        .photographer_list_box ul li:hover{transform:scale(1.1);transition:all 1s;}
+
+        
+        .photographer_interview{width:500px;height:200px;overflow:hidden;margin:0 auto;padding-top:10px;}
+        .photographer_interview ul{width:100%;position:relative;}
+		.photographer_interview ul li{width:500px;height:200px;margin-left:-100%;}
+  
+        .photographer_interview ul li p{font:bold 0.9rem "Nanum Barun Gothic";color:#bbb;transition:all 1s;}
+        .interview_01{position:absolute;top:0;left:0;z-index:0;}
+        .interview_02{position:absolute;top:0;left:0;z-index:0;}
+        .interview_03{position:absolute;top:0;left:0;z-index:0;}
+        .interview_04{position:absolute;top:0;left:0;z-index:0;}
+
+
+        /* article_05_________video*/
+		.photographer_video{width:480px;height:auto;margin:0 auto;margin-top:60px;box-shadow:0.1rem 0.5rem 1.2rem #000;}
+		.photographer_video video{width:480px;height:auto;}
+
+			}
+	</style>
+	
+	<script>
+    $(document).ready(function(){
+        nikonHead() //head.js
+            
+        // sub_js
+        function photoList(){
+            var menu = $(".photographer_list_box").find("li"),
+				interview =$(".photographer_interview").children('li');
+                menu.on('mouseenter',function(){
+                        var $this = $(this),
+                        i_index =$(this).index();
+                    
+                    //.eq():몇번째인지 지정 nth-child()
+                    // .index() : 몇번째인지 지정이 아님!!! 몇번째인지 확인!!!
+                    //console.log(i_index);
+                    $('.photographer_interview').find('li').eq(i_index).animate({'left':'500px'}).siblings().css({'left':'-10000px'});
+                    
+//                    $('.photographer_interview').find('li').eq(i_index).find('p').addClass('photo')
+//                        .siblings().removeClass('photo').animate({'left':'500px','overflow':'hidden'}); //선택 안한 다른 형제들
+//               return false;
+            });
+        };             photoList();
+        
+        
+        // article 메뉴 스크롤탑
+        $('.contents_hawaii').hide();
+        $(window).on('scroll',function(){
+        var sc = $(this).scrollTop(),
+            of = $('.contents_hawaii').offset().top;
+                 $('.contents_heavenly_body').offset().top;
+                 $('.contents_nikkor').offset().top;
+            
+            if(sc <= 1000){
+                $('.contents_hawaii').fadeOut(500);
+            }else{
+                $('.contents_hawaii').fadeIn(500);            
+            }if(sc <= 2300){
+                $('.contents_heavenly_body').fadeOut(500);
+            }else{
+                $('.contents_heavenly_body').fadeIn(500);
+            }if(sc <= 3400){
+                $('.contents_nikkor').fadeOut(500);
+            }else{
+                $('.contents_nikkor').fadeIn(500);
+            }
+            });//scroll
+			
+	
+//		$('.contents_hawaii').on('mouseenter',function(){
+//			$('.contents_hawaii').css({'margin-top':'-100px','transition':'0.5s','opacity':'0'}1000);
+//		});
+
+        
+        		
+		//슬라이드배너
+						slideBanner($('.product'));
+		function slideBanner(banner){
+	var b_box = banner,
+			b_box_ul = b_box.find('ul'),
+			b_box_li = b_box.find('li'),
+			b_box_li_width = b_box.find('li').width();
+			l_btn = $('.banner_left_btn'),
+			r_btn = $('.banner_right_btn');
+
+	// $('.banner_box').find('li').last().prependTo('.banner_box>ul');
+	b_box_li.last().prependTo(b_box_ul);
+
+	l_btn.on('click', function(){
+		var b_li = b_box.find('li');
+		b_li.first().stop().animate({'margin-left': b_box_li_width }, 700, function(){
+			b_li.css({'margin-left':0})
+					.last().prependTo(b_box_ul);
+		});
+
+	});
+	r_btn.on('click', function(){
+		var b_li = b_box.find('li');
+		b_li.first().stop().animate({'margin-left': -b_box_li_width }, 700, function(){
+			b_li.css({'margin-left':0})
+					.first().appendTo(b_box_ul);
+		});
+	});
+
+};//슬라이드배너
+
+    });
+	</script>
+</head>
+<body>
+<div class="sub_02_wrap">
+        <header>
+            <div class="nikon_head">
+                <h1><a href="./nikon_01.html" aria-title="니콘 로고 입니다"></a>logo</h1>
+				<div class="utill_menu">
+			    <div class="global_site">
+					<p>GLOBAL SITE<i class="fa fa-chevron-down"></i></p>
+					<ul class="global_site_list">
+                    	<li class="global_01"><a href="http://www.nikonusa.com">NICONUSA.COM</a><span></span></li>
+                    	<li class="global_02"><a href="http://www.en.nikon.ca">EN.NIKON.CA</a><span></span></li>
+                    	<li class="global_03"><a href="http://www.nikon.au">NIKON.AU</a><span></span></li>
+                    	<li class="global_04"><a href="http://www.nikon.fr">NIKON.FR</a><span></span></li>
+                    	<li class="global_05"><a href="http://www.nikon.de">NIKON.DE</a><span></span></li>
+                    	<li class="global_06"><a href="http://www.nikon.it">NIKON.IT</a><span></span></li>
+                    	<li class="global_07"><a href="http://www.nikon-image.com">NIKON.IMAGE.COM</a><span></span></li>
+                    	<li class="global_08"><a href="http://www.nikon.uk">NIKON.UK</a><span></span></li>
+                    	<li class="global_09"><a href="http://www.nikon.com">NIKON.COM</a><span></span></li>
+                	</ul>			    
+				</div>
+			    <div class="join_box">
+				    <ul>
+			            <li class="login"><a href="#">로그인</a></li>
+			            <li class="join"><a href="./nikon_join.html">회원가입</a></li>
+			            <li class="search"><i class="fa fa-search serch_hide"></i><label for="serch"></label><input type="text" id="serch" name="serch_box" value=""></li>
+			        </ul>
+			    </div>
+				</div>
+				</div>
+				<nav class="gnb_box">
+				<div class="gnb">
+				<ul class="gnb_menu_list">
+					<li class="gnb_menu_01"><a href="#">BRAND</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_01.html">Nikon 소개</a></li>
+							<li><a href="#">CEO 인사말</a></li>
+							<li><a href="#">경영이념</a></li>
+							<li><a href="#">채용정보</a></li>
+							<li><a href="#">홍보센터</a></li>
+							<li><a href="#">카탈로그</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_02"><a href="#">PRODUCT</a>
+						<ul class="snb">
+							<li><a href="nikon_sub_03.html">D series</a></li>
+							<li><a href="#">NIKON 1</a></li>
+							<li><a href="#">DL</a></li>
+							<li><a href="#">COOLPIX</a></li>
+							<li><a href="#">NIKKOR</a></li>
+							<li><a href="#">SPEEDLIGHT</a></li>
+							<li><a href="#">Software</a></li>
+							<li><a href="#">액세서리</a></li>
+							<li><a href="#">판매종료상품</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_03"><a href="#">COMMNUNITY</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_02.html">Special Contents</a></li>
+							<li><a href="#">Photo School</a></li>
+							<li><a href="#">Riview</a></li>
+							<li><a href="#">Event</a></li>
+							<li><a href="#">Nikon Friends</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_04"><a href="./nikon_sub_04.html">SUPPORT</a>
+						<ul class="snb">
+							<li><a href="#">Membership</a></li>
+							<li><a href="#">카메라 활용정보</a></li>
+							<li><a href="#">온라인 서비스</a></li>
+							<li><a href="#">AS안내</a></li>
+							<li><a href="#">고객의소리</a></li>
+							<li><a href="#">고객서비스</a></li>
+							<li><a href="nikon_sub_04.html">매장안내</a></li>
+						</ul>
+        			</li>
+					<li class="gnb_menu_05"><a href="#">NPS</a>
+						<ul class="snb">
+							<li><a href="#">개요</a></li>
+							<li><a href="#">운영진소개</a></li>
+							<li><a href="#">My NPS</a></li>
+							<li><a href="#">Event Support</a></li>
+							<li><a href="#">Notice &amp; Event</a></li>
+							<li><a href="#">NPS Q&amp;A</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_06"><a href="#">E-SHOP</a>
+						<ul class="snb"></ul>
+					</li>
+				</ul>
+			</div>
+			</nav>
+</header>
+<section class="sub_fixed_box">
+<h2>니콘 콘텐츠 영역입니다.</h2>
+	<article class="sub_fixed_img_01">
+	    <div class="fixed_text_box add_cls">
+	        <h3>Special Contents</h3>
+	        <p>마이크로 사이트, 영상 등 Nikon의 제품에 관련된 다양한 콘텐츠를 감상하실 수 있습니다.</p>
+	    </div>
+	</article>
+	<article class="sub_fixed_img_02">
+	<div class="contents_hawaii">
+	    <h3>하와이 온라인  사진전</h3>
+	</div>
+
+	</article>
+	<article class="sub_fixed_img_03">
+	<div class="contents_heavenly_body">
+	    <h3>천체 촬영에 대한 새로운 제안</h3>
+	</div>
+
+	</article>
+	<article class="sub_fixed_img_04">
+	<div class="contents_nikkor">
+	    <h3>Focus On Full Frame Nikkor</h3>
+	</div>
+
+	</article>
+	<article class="sub_fixed_img_05">
+		<div class="contents_photographer">
+	        <h3>최고의 작가들이 최고를 말하다.</h3>
+	        <p></p>
+	        <div class="photographer_box">
+               <div class="photographer_list_box">
+                <ul>
+                    <li><a href="#" class="photographer_01"><span class="photo_list_01">김유철</span></a></li>
+                    <li><a href="#" class="photographer_02"><span class="photo_list_01">안성진</span></a></li>
+                    <li><a href="#" class="photographer_03"><span class="photo_list_01">오중석</span></a></li>
+                    <li><a href="#" class="photographer_04"><span class="photo_list_01">이전호</span></a></li>
+                </ul>
+                </div>
+                <div class="photographer_interview">
+                    <ul>
+                        <li class="interview_01"><p>"사진가라면 누구나 더 곱고 선명하고 계조가 풍부한 사진을 원할 텐데 그런 의미에서 이번 니콘의 DSLR D810이 상용감도 64를 채택하고 나왔다는 것은 사진가들에게는 매우 큰 진화라고 할 수 있겠죠"</p></li>
+                        <li class="interview_02"><p>"오지촬영을 갔었는데 D800만 끝까지 그 온도를 견디고 작동하는 유일한 카메라, 역시 니콘은 살아있구나 라는 것을 느끼게 해주었어요. 역시 D810은 중대형의 디지털 백으로는 어려운 순발력을 갖게 하면서도 화소 수를 보장 해주니까 아주 훌륭한 카메라죠"</p></li>
+                        <li class="interview_03"><p>"초고화소인 D800 카메라가 나온 후로는 모든 사진가는 깜짝 놀랐죠. 여기에 더욱 개선된 D810의 고화질 액정 화면은 야외 촬영을 할 때에도 유용하고, 특히 클라이언트에게 프리뷰용으로 보여주기에 손색이 없을 정도로 좋아진 것 같아요"</p></li>
+                        <li class="interview_04"><p>"D810은 계죠, 콘트라스트 같은 부분들이 훨씬 열려 있는 상태로 모든 정보 값들이 촬영되고 후반 소트프웨어들을 사용해서 본인들이 원하는 컬러들을 더 훌륭히 조절할 수 있게 되었어요. 사용자들의 의견 혹은 바람들을 적용해서 아주 개선이 된 것 같습니다."</p></li>
+                    </ul>
+                </div>
+                <div class="photographer_video">
+					<video autoplay="autoplay" loop="loop" muted="muted" controls="controls">
+ 					<source src="./sub_02/photographer/photographer_video.mp4" type="video/mp4" />
+					</video>
+              		<div class="video_btn">
+               			<button type="button" class="play_btn"></button>
+               			<button type="button" class="pause_btn"></button>
+               		</div>
+                </div>
+	        </div>
+	    </div>
+	</article>
+</section>
+<footer class="nikon_foot">
+    <div class="foot_site_map">
+        <ul>
+		    <li><a href="#">다운로드센터</a></li>
+		    <li><a href="#">개인정보취급방침</a></li>
+		    <li><a href="#">이용약관</a></li>
+		    <li><a href="#">사이트맵</a></li>
+		</ul>
+    </div>
+	<div class="footer_box">
+	<h4>footer logo<a href="#"></a></h4>
+	<div class="sns_box">
+		<ul>
+			<li class="facebook"><a href="#"><span>페이스북 바로가기 링크 입니다.</span></a></li>
+			<li class="blog"><a href="#"><span>블로그 바로가기 링크 입니다.</span></a></li>
+			<li class="instagram"><a href="#"><span>인스타그램 바로가기 링크 입니다.</span></a></li>
+			<li class="youtube"><a href="#"><span>유투브 바로가기 링크 입니다.</span></a></li>
+		</ul>
+	</div>
+	<div class="address_box">
+		<div class="address">
+			<ul>
+				<li class="add_01">(주) 니콘이미징코리아 대표이사:키타바타 히데유키 주소:서울시 중구 세종대로 39 대한상공회의소 12층</li>
+				<li class="add_02">사업자등록번호:104-81-98839 TEL:080-800-6600 FAX:02-2026-0029</li>
+			</ul>
+		</div>
+		<div class="copy_menu"></div>
+		<div class="copyright">ⓒ2016 NIKON IMAGING KOREA CO, LTD</div>
+	</div>
+	</div>
+</footer>
+</div>
+</body>
+</html>

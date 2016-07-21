@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/lib/reset.css" />
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="./img/header/mob_logo.png" />
+    <link rel="stylesheet" href="./nikon_header.css" />
+    <link rel="stylesheet" href="./nikon_footer.css" />
+    <script src="js/jquery/jquery-1.12.3.min.js"></script>
+    <script src="js/jquery/jquery-migrate-1.3.0.min.js"></script>
+    <script src="js/jquery/jquery-ui.min.js"></script>
+    <script src="js/nikon_js/nikon_head.js"></script>
+    <title>Nikon Imaging Korea</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+				
+		html, body{overflow-x:hidden;}
+		@media screen and (min-width:1025px){
+        .sub_01_wrap{width:100%;height:auto;background-color:#fff;}
+        .sub_top_img{width:100%;height:200px;background:url(./sub_04/store_02.jpg) center no-repeat;background-size:100%;}
+        header{background-color:rgba(0,0,0,0.6);}
+        
+		/* sub_01 section location */
+		.location{width:960px;height:20px;margin:0 auto;}
+		.location ul{width:262px;height:20px;}
+		.location ul li{font-family:"Nanum Gothic";width:auto;height:10px;float:left;padding:10px 0 0 10px;}
+		.location ul li a{text-decoration:none;}
+		.location ul li a:hover{color:#ffe009;text-decoration:underline;}
+        .location ul li i{font-size:1rem;padding-right:4px;}
+        .location ul li span{width:10px;height:20px;background:url(./sub_02/nikkor/btn_slide_next2.png) center no-repeat;background-size:60%;float:right;margin-left:6px;}
+
+		
+		.sub_head{width:960px;height:auto;margin:0 auto;border-bottom:2px solid #bbb;padding-bottom:10px;}
+        .sub_head h2{font:bold 1.5rem "arial";color:#3a3a3a;text-align:center;margin:50px 0 10px;}
+        .sub_head_text{font:bold 1rem "Nanum Gothic";color:#3a3a3a;text-align:center;}
+		
+		/*section*/
+		section{width:960px;height:auto;margin:0 auto;}
+		.nikon_store{width:100%;height:250px;margin-top:30px;}
+		.nikon_store ul{width:100%;height:100%;}
+		.nikon_store ul li{width:300px;height:100%;background-color: #fff;float:left;position:relative;cursor:pointer;}
+		.nikon_store ul li:nth-child(2){margin-left:30px;}
+		.nikon_store ul li:nth-child(3){margin-left:30px;}
+		.roadshop img{width:100%;height:200px;}
+		.store_top_text{font:bold 1.125rem "Nanum Gothic";color:#686868;text-align:center;padding:10px 0;}
+		.hover_view{font-family:"Nanum Gothic"; width:100%;height:200px;position:absolute;top:0;left:0;z-index:100;color:#eee;transition:all 0.5s;color:transparent;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover .hover_view{width:100%;height:200px;float:left;background-color:rgba(0,0,0,0.5);display:block;font:bold 1rem "Nanum Barun Gothic";color:#fFE009;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover img{transform:scale(1.05);transition:all 0.5s;}
+		.department img{width:100%;height:200px;cursor:pointer;}
+		.disc_shop img{width:100%;height:200px;cursor:pointer;}
+		.store_serch{width:900px;height:40px;background-color:#ededed;margin-top:30px;padding:30px;}
+		.store_serch form{width:500px;height:100%;margin:0 auto;}
+		.store_serch form label{padding:0 30px;font:bold 1rem "Nanum Gothic"}
+		.store_serch form select{width:100px;height:25px;border:1px solid #dedede;box-sizing:border-box;font-size:1rem;font-family:"Nanum Gothic"}
+		.store_serch form input{height:25px;margin-left:10px;border:1px solid #dedede;box-sizing:border-box;}
+		.store_serch form i{font-size:1rem;color:#797979;padding:10px}
+		
+		section article{margin-top:30px;}
+		/* section article_01 로드샵 리스트*/
+		.road_list{width:100%;height:1630px;}
+		.road_list ul{width:100%;height:100%;margin-top:20px;}
+		.road_list ul li{width:100%;height:240px;}
+		.road_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		.map_open i{font-size:0.75rem;padding:0 5px;color:#686868;}
+		.map_img{width:960px;height:300px;background-color: #aef;background-image: url(./sub_04/road_shop/map_img/dgate_img.jpg);display:inline-block;margin-top:10px;display:none;}
+
+		/* section article_02 백화점 리스트*/
+		.depart_list{width:100%;height:1900px;display:none;}
+		.depart_list ul{width:100%;height:100%;margin-top:20px;}
+		.depart_list ul li{width:100%;height:240px;}
+		.depart_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		#lott_dep{display:none;}
+		#ssg_dep{display:none;}
+		#gall_dep{display:none;}
+		.depart_location{width:960px;height:20px}
+		.depart_location form{width:100%;height:100%;margin-top:20px;}
+		.depart_location form input{margin-left:20px;}
+		.depart_location form label{padding:10px;}
+		/* section article_03 할인점 리스트*/
+		.disc_list{width:100%;height:1000px;display:none;}
+		.disc_list ul{width:100%;height:100%;margin-top:20px;}
+		.disc_list ul li{width:100%;height:240px}
+		.disc_list ul li img{width:300px;float:left;}
+		.disc_list
+		}
+		@media screen and (min-width:769px) and (max-width:1024px){
+        .sub_01_wrap{width:100%;height:auto;background-color:#fff;}
+        .sub_top_img{width:100%;height:200px;background:url(./sub_04/store_02.jpg) center no-repeat;background-size:100%;}
+        header{background-color:rgba(0,0,0,0.6);}
+        
+		/* sub_01 section location */
+		.location{width:100%;height:20px;margin:0 auto;}
+		.location ul{width:262px;height:20px;}
+		.location ul li{font-family:"Nanum Gothic";width:auto;height:10px;float:left;padding:10px 0 0 10px;}
+		.location ul li a{text-decoration:none;}
+		.location ul li a:hover{color:#ffe009;text-decoration:underline;}
+        .location ul li i{font-size:1rem;padding-right:4px;}
+        .location ul li span{width:10px;height:20px;background:url(./sub_02/nikkor/btn_slide_next2.png) center no-repeat;background-size:60%;float:right;margin-left:6px;}
+
+		
+		.sub_head{width:100%;height:auto;margin:0 auto;border-bottom:2px solid #bbb;padding-bottom:10px;}
+        .sub_head h2{font:bold 1.5rem "arial";color:#3a3a3a;text-align:center;margin:50px 0 10px;}
+        .sub_head_text{font:bold 1rem "Nanum Gothic";color:#3a3a3a;text-align:center;}
+		
+		/*section*/
+		section{width:1024px;height:auto;margin:0 auto;}
+		.nikon_store{width:1024px;height:250px;margin-top:30px;}
+		.nikon_store ul{width:100%;height:100%;}
+		.nikon_store ul li{width:300px;height:100%;background-color: #fff;float:left;position:relative;cursor:pointer;}
+		.nikon_store ul li:nth-child(2){margin-left:30px;}
+		.nikon_store ul li:nth-child(3){margin-left:30px;}
+		.roadshop img{width:100%;height:200px;}
+		.store_top_text{font:bold 1.125rem "Nanum Gothic";color:#686868;text-align:center;padding:10px 0;}
+		.hover_view{width:100%;height:200px;position:absolute;top:0;left:0;z-index:100;color:#eee;transition:all 0.5s;color:transparent;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover .hover_view{width:100%;height:200px;float:left;background-color:rgba(0,0,0,0.5);display:block;font:bold 1rem "Nanum Barun Gothic";color:#fFE009;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover img{transform:scale(1.05);transition:all 0.5s;}
+		.department img{width:100%;height:200px;cursor:pointer;}
+		.disc_shop img{width:100%;height:200px;cursor:pointer;}
+		.store_serch{width:900px;height:40px;background-color:#ededed;margin-top:30px;padding:30px;}
+		.store_serch form{width:500px;height:100%;margin:0 auto;}
+		.store_serch form label{padding:0 30px;font:bold 1rem "Nanum Gothic"}
+		.store_serch form select{width:100px;height:25px;border:1px solid #dedede;box-sizing:border-box;font-size:1rem;font-family:"Nanum Gothic"}
+		.store_serch form input{height:25px;margin-left:10px;border:1px solid #dedede;box-sizing:border-box;}
+		.store_serch form i{font-size:1rem;color:#797979;padding:10px}
+		
+		section article{margin-top:30px;}
+		/* section article_01 로드샵 리스트*/
+		.road_list{width:100%;height:1630px;}
+		.road_list ul{width:100%;height:100%;margin-top:20px;}
+		.road_list ul li{width:100%;height:240px;}
+		.road_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		.map_open i{font-size:0.75rem;padding:0 5px;color:#686868;}
+		.map_img{width:960px;height:300px;background-color: #aef;background-image: url(./sub_04/road_shop/map_img/dgate_img.jpg);display:inline-block;margin-top:10px;display:none;}
+
+		/* section article_02 백화점 리스트*/
+		.depart_list{width:100%;height:1900px;display:none;}
+		.depart_list ul{width:100%;height:100%;margin-top:20px;}
+		.depart_list ul li{width:100%;height:240px;}
+		.depart_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		#lott_dep{display:none;}
+		#ssg_dep{display:none;}
+		#gall_dep{display:none;}
+		.depart_location{width:960px;height:20px}
+		.depart_location form{width:100%;height:100%;margin-top:20px;}
+		.depart_location form input{margin-left:20px;}
+		.depart_location form label{padding:10px;}
+		/* section article_03 할인점 리스트*/
+		.disc_list{width:100%;height:1000px;display:none;}
+		.disc_list ul{width:100%;height:100%;margin-top:20px;}
+		.disc_list ul li{width:100%;height:240px}
+		.disc_list ul li img{width:300px;float:left;}
+		.disc_list
+		}
+		
+		@media screen and (min-width:481px) and (max-width:768px){
+        .sub_01_wrap{width:100%;height:auto;background-color:#fff;}
+        .sub_top_img{width:100%;height:200px;background:url(./sub_04/store_02.jpg) center no-repeat;background-size:100%;}
+        header{background-color:rgba(0,0,0,0.6);}
+        
+		/* sub_01 section location */
+		.location{width:960px;height:20px;margin:0 auto;}
+		.location ul{width:262px;height:20px;}
+		.location ul li{font-family:"Nanum Gothic";width:auto;height:10px;float:left;padding:10px 0 0 10px;}
+		.location ul li a{text-decoration:none;}
+		.location ul li a:hover{color:#ffe009;text-decoration:underline;}
+        .location ul li i{font-size:1rem;padding-right:4px;}
+        .location ul li span{width:10px;height:20px;background:url(./sub_02/nikkor/btn_slide_next2.png) center no-repeat;background-size:60%;float:right;margin-left:6px;}
+
+		
+		.sub_head{width:960px;height:auto;margin:0 auto;border-bottom:2px solid #bbb;padding-bottom:10px;}
+        .sub_head h2{font:bold 1.5rem "arial";color:#3a3a3a;text-align:center;margin:50px 0 10px;}
+        .sub_head_text{font:bold 1rem "Nanum Gothic";color:#3a3a3a;text-align:center;}
+		
+		/*section*/
+		section{width:768px;height:auto;margin:0 auto;}
+		.nikon_store{width:768px;height:auto;margin-top:30px;}
+		.nikon_store ul{width:100%;height:100%;}
+		.nikon_store ul li{width:33.3%;height:100%;background-color: #fff;float:left;position:relative;cursor:pointer;}
+		.nikon_store ul li:nth-child(2){margin-left:30px;}
+		.nikon_store ul li:nth-child(3){margin-left:30px;}
+		.roadshop img{width:100%;height:200px;}
+		.store_top_text{font:bold 1.125rem "Nanum Gothic";color:#686868;text-align:center;padding:10px 0;}
+		.hover_view{width:100%;height:200px;position:absolute;top:0;left:0;z-index:100;color:#eee;transition:all 0.5s;color:transparent;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover .hover_view{width:100%;height:200px;float:left;background-color:rgba(0,0,0,0.5);display:block;font:bold 1rem "Nanum Barun Gothic";color:#fFE009;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover img{transform:scale(1.05);transition:all 0.5s;}
+		.department img{width:100%;height:200px;cursor:pointer;}
+		.disc_shop img{width:100%;height:200px;cursor:pointer;}
+		
+		/*매장 검색*/
+		.store_serch{width:768px;height:40px;background-color:#ededed;margin-top:30px;padding:30px;}
+		.store_serch form{width:768px;height:100%;margin:0 auto;}
+		.store_serch form label{padding:0 30px;font:bold 1rem "Nanum Gothic"}
+		.store_serch form select{width:100px;height:25px;border:1px solid #dedede;box-sizing:border-box;font-size:1rem;font-family:"Nanum Gothic"}
+		.store_serch form input{height:25px;margin-left:10px;border:1px solid #dedede;box-sizing:border-box;}
+		.store_serch form i{font-size:1rem;color:#797979;padding:10px}
+		
+		section article{margin-top:30px;}
+		/* section article_01 로드샵 리스트*/
+		.road_list{width:100%;height:1630px;}
+		.road_list ul{width:100%;height:100%;margin-top:20px;}
+		.road_list ul li{width:100%;height:240px;}
+		.road_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		.map_open i{font-size:0.75rem;padding:0 5px;color:#686868;}
+		.map_img{width:960px;height:300px;background-color: #aef;background-image: url(./sub_04/road_shop/map_img/dgate_img.jpg);display:inline-block;margin-top:10px;display:none;}
+
+		/* section article_02 백화점 리스트*/
+		.depart_list{width:100%;height:1900px;display:none;}
+		.depart_list ul{width:100%;height:100%;margin-top:20px;}
+		.depart_list ul li{width:100%;height:240px;}
+		.depart_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		#lott_dep{display:none;}
+		#ssg_dep{display:none;}
+		#gall_dep{display:none;}
+		.depart_location{width:960px;height:20px}
+		.depart_location form{width:100%;height:100%;margin-top:20px;}
+		.depart_location form input{margin-left:20px;}
+		.depart_location form label{padding:10px;}
+		/* section article_03 할인점 리스트*/
+		.disc_list{width:100%;height:1000px;display:none;}
+		.disc_list ul{width:100%;height:100%;margin-top:20px;}
+		.disc_list ul li{width:100%;height:240px}
+		.disc_list ul li img{width:300px;float:left;}
+		.disc_list
+		}
+		
+		@media screen and (max-width:480px){
+        .sub_01_wrap{width:100%;height:auto;background-color:#fff;}
+        .sub_top_img{width:100%;height:200px;background:url(./sub_04/store_02.jpg) center no-repeat;background-size:100%;}
+        header{background-color:rgba(0,0,0,0.6);}
+        
+		/* sub_01 section location */
+		.location{width:960px;height:20px;margin:0 auto;}
+		.location ul{width:262px;height:20px;}
+		.location ul li{font-family:"Nanum Gothic";width:auto;height:10px;float:left;padding:10px 0 0 10px;}
+		.location ul li a{text-decoration:none;}
+		.location ul li a:hover{color:#ffe009;text-decoration:underline;}
+        .location ul li i{font-size:1rem;padding-right:4px;}
+        .location ul li span{width:10px;height:20px;background:url(./sub_02/nikkor/btn_slide_next2.png) center no-repeat;background-size:60%;float:right;margin-left:6px;}
+
+		
+		.sub_head{width:960px;height:auto;margin:0 auto;border-bottom:2px solid #bbb;padding-bottom:10px;}
+        .sub_head h2{font:bold 1.5rem "arial";color:#3a3a3a;text-align:center;margin:50px 0 10px;}
+        .sub_head_text{font:bold 1rem "Nanum Gothic";color:#3a3a3a;text-align:center;}
+		
+		/*section*/
+		section{width:480px;height:auto;margin:0 auto;}
+		.nikon_store{width:480px;height:auto;margin-top:30px;}
+		.nikon_store ul{width:100%;height:100%;}
+		.nikon_store ul li{width:33.3%;height:100%;background-color: #fff;float:left;position:relative;cursor:pointer;}
+		.nikon_store ul li:nth-child(2){margin-left:30px;}
+		.nikon_store ul li:nth-child(3){margin-left:30px;}
+		.roadshop img{width:100%;height:200px;}
+		.store_top_text{font:bold 1.125rem "Nanum Gothic";color:#686868;text-align:center;padding:10px 0;}
+		.hover_view{font-family:sans-serif;width:100%;height:200px;position:absolute;top:0;left:0;z-index:100;color:#eee;transition:all 0.5s;color:transparent;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover .hover_view{width:100%;height:200px;float:left;background-color:rgba(0,0,0,0.5);display:block;font:bold 1rem "Nanum Barun Gothic";color:#fFE009;line-height:200px;text-align:center;}
+		.nikon_store ul li:hover img{transform:scale(1.05);transition:all 0.5s;}
+		.department img{width:100%;height:200px;cursor:pointer;}
+		.disc_shop img{width:100%;height:200px;cursor:pointer;}
+					
+		/* 매장 검색 */
+		.store_serch{width:480px;height:40px;background-color:#ededed;margin-top:30px;padding:30px;}			
+		.store_serch form{width:480px;height:100%;margin:0 auto;}
+		.store_serch form label{padding:0 30px;font:bold 1rem "Nanum Gothic"}
+		.store_serch form select{width:100px;height:25px;border:1px solid #dedede;box-sizing:border-box;font-size:1rem;font-family:"Nanum Gothic"}
+		.store_serch form input{height:25px;margin-left:10px;border:1px solid #dedede;box-sizing:border-box;}
+		.store_serch form i{font-size:1rem;color:#797979;padding:10px}
+		
+		section article{margin-top:30px;}
+		/* section article_01 로드샵 리스트*/
+		.road_list{width:100%;height:1630px;}
+		.road_list ul{width:100%;height:100%;margin-top:20px;}
+		.road_list ul li{width:100%;height:240px;}
+		.road_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		.map_open i{font-size:0.75rem;padding:0 5px;color:#686868;}
+		.map_img{width:960px;height:300px;background-color: #aef;background-image: url(./sub_04/road_shop/map_img/dgate_img.jpg);display:inline-block;margin-top:10px;display:none;}
+
+		/* section article_02 백화점 리스트*/
+		.depart_list{width:100%;height:1900px;display:none;}
+		.depart_list ul{width:100%;height:100%;margin-top:20px;}
+		.depart_list ul li{width:100%;height:240px;}
+		.depart_list ul li img{width:300px;float:left;}
+		.road_text_box{width:630px;float:left;margin-left:30px;}
+		.road_text_box h4{font:bold 1rem "Nanum Gothic";border-bottom:1px solid #686868;padding:10px 0;}
+		.road_text_box p{font:0.9rem "Nanum Gothic";border-bottom:1px solid #bbb;padding:10px 0;}
+		.map_open{cursor:pointer;}
+		#lott_dep{display:none;}
+		#ssg_dep{display:none;}
+		#gall_dep{display:none;}
+		.depart_location{width:960px;height:20px}
+		.depart_location form{width:100%;height:100%;margin-top:20px;}
+		.depart_location form input{margin-left:20px;}
+		.depart_location form label{padding:10px;}
+		/* section article_03 할인점 리스트*/
+		.disc_list{width:100%;height:1000px;display:none;}
+		.disc_list ul{width:100%;height:100%;margin-top:20px;}
+		.disc_list ul li{width:100%;height:240px}
+		.disc_list ul li img{width:300px;float:left;}
+		.disc_list
+		}
+    </style>
+    <script>
+    $(document).ready(function(){
+        nikonHead() //head.js
+		
+		var road_btn = $('.roadshop'),
+			dept_btn = $('.department'),
+			disc_btn = $('.disc_shop'),
+			road_show = $('.road_list'),
+			dept_show = $('.depart_list'),
+			disc_show = $('.disc_list');
+
+		dept_btn.on('click',function(){
+			dept_show.show(),
+				road_show.stop().hide(),
+				disc_show.stop().hide();
+		});
+		disc_btn.on('click',function(){
+			disc_show.show(),
+				road_show.stop().hide(),
+				dept_show.stop().hide();
+		});
+		road_btn.on('click',function(){
+			road_show.show(),
+				dept_show.stop().hide(),
+				disc_show.stop().hide();
+		});// 매장 분류 리스트 show
+	
+
+//		var hd_btn = $('.hd'),
+//			lott_btn = $('.lott'),
+//			ssg_btn = $('.ssg'),
+//			gall_btn = $('.gall'),
+//			hd_show = $('.hyundai_dep'),
+//			lott_show = $('.lott_dep');
+//		lott_btn.on('click',function(){
+//			lott_show.show(),
+//				lott_show.siblings('ul').hide();
+//		})
+});
+    </script>
+</head>
+<body>
+    <div id="nikon_sub_04_wrap">
+        <header>
+            <div class="nikon_head">
+                <h1><a href="nikon_01.html" aria-title="니콘 로고 입니다."></a>logo</h1>
+				<div class="utill_menu">
+			    <div class="global_site">
+					<p>GLOBAL SITE<i class="fa fa-chevron-down"></i></p>
+					<ul class="global_site_list">
+                    	<li class="global_01"><a href="http://www.nikonusa.com">NICONUSA.COM</a><span></span></li>
+                    	<li class="global_02"><a href="http://www.en.nikon.ca">EN.NIKON.CA</a><span></span></li>
+                    	<li class="global_03"><a href="http://www.nikon.au">NIKON.AU</a><span></span></li>
+                    	<li class="global_04"><a href="http://www.nikon.fr">NIKON.FR</a><span></span></li>
+                    	<li class="global_05"><a href="http://www.nikon.de">NIKON.DE</a><span></span></li>
+                    	<li class="global_06"><a href="http://www.nikon.it">NIKON.IT</a><span></span></li>
+                    	<li class="global_07"><a href="http://www.nikon-image.com">NIKON.IMAGE.COM</a><span></span></li>
+                    	<li class="global_08"><a href="http://www.nikon.uk">NIKON.UK</a><span></span></li>
+                    	<li class="global_09"><a href="http://www.nikon.com">NIKON.COM</a><span></span></li>
+                	</ul>			    
+				</div>
+			    <div class="join_box">
+				    <ul>
+			            <li class="login"><a href="#">로그인</a></li>
+			            <li class="join"><a href="./nikon_join.html">회원가입</a></li>
+			            <li class="search"><i class="fa fa-search serch_hide"></i><label for="serch"></label><input type="text" id="serch" name="serch_box" value=""></li>
+			        </ul>
+			    </div>
+				</div>
+				</div>
+				<nav class="gnb_box">
+				<div class="gnb">
+				<ul class="gnb_menu_list">
+					<li class="gnb_menu_01"><a href="#">BRAND</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_01.html">Nikon 소개</a></li>
+							<li><a href="#">CEO 인사말</a></li>
+							<li><a href="#">경영이념</a></li>
+							<li><a href="#">채용정보</a></li>
+							<li><a href="#">홍보센터</a></li>
+							<li><a href="#">카탈로그</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_02"><a href="#">PRODUCT</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_03.html">D series</a></li>
+							<li><a href="#">NIKON 1</a></li>
+							<li><a href="#">DL</a></li>
+							<li><a href="#">COOLPIX</a></li>
+							<li><a href="#">NIKKOR</a></li>
+							<li><a href="#">SPEEDLIGHT</a></li>
+							<li><a href="#">Software</a></li>
+							<li><a href="#">액세서리</a></li>
+							<li><a href="#">판매종료상품</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_03"><a href="#">COMMNUNITY</a>
+						<ul class="snb">
+							<li><a href="./nikon_sub_02.html">Special Contents</a></li>
+							<li><a href="#">Photo School</a></li>
+							<li><a href="#">Riview</a></li>
+							<li><a href="#">Event</a></li>
+							<li><a href="#">Nikon Friends</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_04"><a href="#">SUPPORT</a>
+						<ul class="snb">
+							<li><a href="#">Membership</a></li>
+							<li><a href="#">카메라 활용정보</a></li>
+							<li><a href="#">온라인 서비스</a></li>
+							<li><a href="#">AS안내</a></li>
+							<li><a href="#">고객의소리</a></li>
+							<li><a href="#">고객서비스</a></li>
+							<li><a href="nikon_sub_04.html">매장안내</a></li>
+						</ul>
+				    </li>
+					<li class="gnb_menu_05"><a href="#">NPS</a>
+						<ul class="snb">
+							<li><a href="#">개요</a></li>
+							<li><a href="#">운영진소개</a></li>
+							<li><a href="#">My NPS</a></li>
+							<li><a href="#">Event Support</a></li>
+							<li><a href="#">Notice</a></li>
+							<li><a href="#">NPS Q&amp;A</a></li>
+						</ul>
+					</li>
+					<li class="gnb_menu_06"><a href="#">E-SHOP</a>
+						<ul class="snb"></ul>
+					</li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+		<aside class="sub_top_img"></aside>
+       <div class="location">
+       	<ul>
+       		<li><i class="fa fa-home"></i><a href="./nikon_01.html">Home</a><span class="me_hidden"></span></li>
+       		<li><a href="#">Support</a><span class="me_hidden"></span></li>
+       		<li>매장안내</li>
+       	</ul>
+       </div><!-- location -->
+       <div class="sub_head">
+        	<h2>Nikon Store</h2>
+    		<p class="sub_head_text">니콘 정품 매장을 안내합니다.</p>
+    	</div><!-- sub_head -->
+    	<section>
+    	<h2>니콘 매장 안내</h2>
+    	<div class="nikon_store">
+    		<ul>
+    			<li class="roadshop">
+    				<img src="./sub_04/road_top_img.jpg" alt="니콘 로드샵 이미지 입니다.">
+    				<span class="hover_view">MORE</span>
+    				<p class="store_top_text">로드샵</p>
+    			</li>
+    			<li class="department">
+    				<img src="./sub_04/depart_st/gall/time_world.jpg" alt="니콘 백화점 이미지 입니다.">
+    				<span class="hover_view">MORE</span>
+    				<p class="store_top_text">백화점</p>
+    			</li>
+    			<li class="disc_shop">
+    				<img src="./sub_04/disc_shop/j.jpg" alt="니콘 할인점 이미지 입니다.">
+    				<span class="hover_view">MORE</span>
+    				<p class="store_top_text">할인점</p>
+    			</li>
+    		</ul>
+    	</div>
+    	<div class="store_serch">
+    		<form action="#" method="get">
+    			<label for="store_serch">검색</label>
+    			<select name="serch_box" id="">
+    				<option value="all">전체</option>
+    				<option value="store_name">매장명</option>
+    				<option value="address">주소</option>
+    				<option value="area">지역</option>
+    			</select>
+    			<input type="text" id="store_serch" name="str_serch" value="" placeholder="검색어를 입력해주세요">
+    			<a href=""><i class="fa fa-search serch_hide"></i></a>
+    		</form>
+    	</div>
+    		<article class="road_list">
+    			<h3>로드샵</h3>
+    			<ul>
+    				<li class="road_list_01">
+    					<div><img src="./sub_04/road_shop/dgate.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>디지게이트</h4><p>주소 : 서울특별시 중구 충무로 2가 48-3</p><p>전화 : 02-714-7887</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    				<li class="road_list_02">
+    					<div><img src="./sub_04/road_shop/bosin.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>보신카메라</h4><p>주소 : 부산광역시 중구 광복동 1가 17-5</p><p>전화 : 051-245-8545</p><p>근무시간 : 평일 10:00 ~ 20:00 (일요일휴무)</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    				<li class="road_list_03">
+    					<div><img src="./sub_04/road_shop/dgcp.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>디지털청풍</h4><p>주소 : 서울특별시 용산구 한강로3가 40-999 아이파크몰 전자전문점 4층 902호</p><p>전화 : 02-2012-2041</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    				<li class="road_list_04">
+    					<div><img src="./sub_04/road_shop/donga.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>동아카메라</h4><p>주소 : 대구광역시 북구 산격동 1621 종합유통단지 전자관 1층 280호</p><p>전화 : 053-604-2340</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    				<li class="road_list_05">
+    					<div><img src="./sub_04/road_shop/ooy.gif" alt=""></div>
+    					<div class="road_text_box"><h4>우영카메라</h4><p>주소 : 광주광역시 동구 금남로 2가 18번지 1층</p><p>전화 : 062-227-3221</p><p>근무시간 : 오전 9시 ~ 오후 8시 30분 까지 (설날, 추석 당일 휴무)</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    				<li class="road_list_06">
+    					<div><img src="./sub_04/road_shop/ul.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>울산내일</h4><p>주소 : 울산시 남구 달동 1325-12 카메라마트</p><p>전화 : 052-222-6666</p><p>근무시간 : 평일 09:30 ~ 20:00 공휴일 10:30 ~ 18:00</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    			</ul>
+    		</article>
+    		<article class="depart_list">
+    			<h3>백화점</h3>
+    			<div class="depart_location">
+    				<form action="#" method="get">
+    				<input type="radio" id="dept_01" name="dp_list" value="" class="hd">
+    				<label for="dept_01">HYUNDAI</label>
+    				<input type="radio" id="dept_02" name="dp_list" value="" class="lott">
+    				<label for="dept_02">LOTTE</label>
+    				<input type="radio" id="dept_03" name="dp_list" value="" class="ssg">
+    				<label for="dept_03">SHINSEGAE</label>
+    				<input type="radio" id="dept_04" name="dp_list" value="" class="gall">
+    				<label for="dept_04">GALLERIA</label>
+     				</form>
+    			</div>
+    			<ul>
+    				<li>
+    					<ul id="hyundai_dep">
+							<li class="depart_list_01">
+								<div><img src="./sub_04/depart_st/hyundai/cc.jpg" alt=""></div>
+								<div class="road_text_box"><h4>현대백화점 충청점</h4><p>주소 : 충북 청주시 흥덕구 송정동 현대백화점 5층 가전매장</p><p>전화 : 043-909-4552</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_02">
+								<div><img src="./sub_04/depart_st/hyundai/dae.jpg" alt=""></div>
+								<div class="road_text_box"><h4>현대백화점 대구점</h4><p>주소 : 대구시 중구 계산동 2가 현대백화점 대구점 가전매장</p><p>전화 : 053-245-2715</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_03">
+								<div><img src="./sub_04/depart_st/hyundai/mok.jpg" alt=""></div>
+								<div class="road_text_box"><h4>현대백화점 목동점</h4><p>주소 : 서울시 양천구 목동 916 현대백화점 지하1층 가전매장</p><p>전화 : 02-2163-1088</p><p>근무시간 : 오전 9시 ~ 오후 8시 30분 까지 (설날, 추석 당일 휴무)</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_04">
+								<div><img src="./sub_04/depart_st/hyundai/p.gif" alt=""></div>
+								<div class="road_text_box"><h4>현대백화점 판교점</h4><p>주소 : 경기도 성남시 분당구 백현동 514번지 현대백화점 판교점 8F 니콘샵</p><p>전화 : 031-5170-1842</p><p>근무시간 : 주중: 10:30~20:00 | 주말: 10:30~20:30</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_05">
+								<div><img src="./sub_04/depart_st/hyundai/sam.jpg" alt=""></div>
+								<div class="road_text_box"><h4>현대백화점 무역센터점</h4><p>주소 : 서울시 강남구 삼성동 159-7 현대백화점 무역센터점 9층</p><p>전화 : 02-3467-8379</p><p>근무시간 : 평일 09:30 ~ 20:00 공휴일 10:30 ~ 18:00</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_06">
+								<div><img src="./sub_04/depart_st/hyundai/sin.jpg" alt=""></div>
+								<div class="road_text_box"><h4>현대백화점 신촌점</h4><p>주소 : 서울시 서대문구 창천동 30-33 현대백화점 신촌점 9층 동아카메라</p><p>전화 : 02-3145-2817</p><p>근무시간 : 평일 09:30 ~ 20:00 공휴일 10:30 ~ 18:00</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_07">
+								<div><img src="./sub_04/depart_st/hyundai/ul.jpg" alt=""></div>
+								<div class="road_text_box"><h4>현대백화점 울산점</h4><p>주소 : 울산시 남구 삼산동 1521-1번지 현대백화점 울산점 가전매장</p><p>전화 : 052-228-0822</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+						</ul>
+    				</li>
+    				<li>
+    					<ul id="lott_dep">
+							<li class="depart_list_08">
+								<div><img src="./sub_04/depart_st/lott/b.jpg" alt=""></div>
+								<div class="road_text_box"><h4>롯데백화점 본점</h4><p>주소 : 서울 중구 소공동 1번지 롯데백화점 본점 8F 니콘샵</p><p>전화 : 02-772-3941</p><p>근무시간 : 10:30~20:00</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_09">
+								<div><img src="./sub_04/depart_st/lott/bu.jpg" alt=""></div>
+								<div class="road_text_box"><h4>롯데백화점 부산본점</h4><p>주소 : 부산광역시 부산진구 부전동 508-2 롯데백화점 6층 가전매장</p><p>전화 : 0051-810-3664</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_10">
+								<div><img src="./sub_04/depart_st/lott/ul.jpg" alt=""></div>
+								<div class="road_text_box"><h4>롯데백화점 울산점</h4><p>주소 : 울산시 남구 삼산동 1480-1번지 지하1층 니콘존</p><p>전화 : 052-960-5280</p><p>근무시간 : 10:30~20:00</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+						</ul>
+    				</li>
+    				<li>
+    					<ul id="ssg_dep">
+							<li class="depart_list_11">
+								<div><img src="./sub_04/depart_st/ssg/gn.jpg" alt=""></div>
+								<div class="road_text_box"><h4>신세계백화점 강남점</h4><p>주소 : 서울특별시 서초구 반포동 19-3 신관 9층</p><p>전화 : 02-3479-1748</p><p>근무시간 : 10:30~20:00</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_12">
+								<div><img src="./sub_04/depart_st/ssg/kkjpg.jpg" alt=""></div>
+								<div class="road_text_box"><h4>신세계백화점 경기점</h4><p>주소 : 경기도 용인시 수지구 죽전동 1285번지 신세계백화점 경기점 지하2층 가전매장</p><p>전화 : 031-695-1552</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+							<li class="depart_list_13">
+								<div><img src="./sub_04/depart_st/ssg/ujb.jpg" alt=""></div>
+								<div class="road_text_box"><h4>신세계백화점 영등포점</h4><p>주소 : 서울특별시 영등포구 영등포동 4가 434-5 신세계백화점 영등포점 B관 6층 가전매장</p><p>전화 : 02-2639-1462</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+							</li>
+								<li class="depart_list_14">
+								<div><img src="./sub_04/depart_st/ssg/ydp.jpg" alt=""></div>
+								<div class="road_text_box"><h4>신세계백화점 의정부점</h4><p>주소 : 경기도 의정부시 의정부동 168-54 신세계백화점 의정부점 8층 가전매장</p><p>전화 : 031-8082-0816</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+    						</li>					
+						</ul>
+					</li>
+    				<li>
+    					<ul id="gall_dep">
+    						<li>
+    							<div><img src="./sub_04/depart_st/gall/time_world.jpg" alt=""></div>
+								<div class="road_text_box"><h4>신세계백화점 의정부점</h4><p>주소 : 경기도 의정부시 의정부동 168-54 신세계백화점 의정부점 8층 가전매장</p><p>전화 : 031-8082-0816</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+								<div class="map_img"></div>
+    						</li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</article>
+    		<article class="disc_list">
+    			<h3>할인점</h3>
+    			<ul>
+    				<li class="disc_list_01">
+    					<div><img src="./sub_04/disc_shop/e_mart.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>이마트 대전터미널점</h4><p>주소 : 대전시 동구 용전동 63-3 이마트 대전터미널점 4층 가전매장</p><p>전화 : 042-626-7771</p><p>근무시간</p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    				<li class="disc_list_02">
+    					<div><img src="./sub_04/disc_shop/j.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>이마트 죽전점</h4><p>주소 : 경기도 용인시 수지구 죽전동 1282번지 이마트 죽전점 1층 가전매장</p><p>전화 : 031-888-1207</p><p>근무시간 </p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    				   	<li class="disc_list_03">
+    					<div><img src="./sub_04/disc_shop/y.jpg" alt=""></div>
+    					<div class="road_text_box"><h4>이마트 연수점</h4><p>주소 : 인천광역시 연수구 동춘동 926-9 이마트 연수점 2층 가전매장</p><p>전화 : 032-820-1207 (가전매장)</p><p>근무시간 </p><p class="map_open">오시는길<i class="fa fa-chevron-down"></i></p></div>
+    					<div class="map_img"></div>
+    				</li>
+    			</ul>
+    		</article>
+    	</section>
+		<footer class="nikon_foot">
+    <div class="foot_site_map">
+        <ul>
+		    <li><a href="#">다운로드센터</a></li>
+		    <li><a href="#">개인정보취급방침</a></li>
+		    <li><a href="#">이용약관</a></li>
+		    <li><a href="#">사이트맵</a></li>
+		</ul>
+    </div>
+	<div class="footer_box">
+	<h4>footer logo<a href="#"></a></h4>
+	<div class="sns_box">
+		<ul>
+			<li class="facebook"><a href="#"><span>페이스북 바로가기 링크 입니다.</span></a></li>
+			<li class="blog"><a href="#"><span>블로그 바로가기 링크 입니다.</span></a></li>
+			<li class="instagram"><a href="#"><span>인스타그램 바로가기 링크 입니다.</span></a></li>
+			<li class="youtube"><a href="#"><span>유투브 바로가기 링크 입니다.</span></a></li>
+		</ul>
+	</div>
+	<div class="address_box">
+		<div class="address">
+			<ul>
+				<li class="add_01">(주) 니콘이미징코리아 대표이사:키타바타 히데유키 주소:서울시 중구 세종대로 39 대한상공회의소 12층</li>
+				<li class="add_02">사업자등록번호:104-81-98839 TEL:080-800-6600 FAX:02-2026-0029</li>
+			</ul>
+		</div>
+		<div class="copy_menu"></div>
+		<div class="copyright">ⓒ2016 NIKON IMAGING KOREA CO, LTD</div>
+	</div>
+	</div>
+</footer>
+</div>
+</body>
+</html>
