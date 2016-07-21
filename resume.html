@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="./nikon/css/lib/reset.css" />
+	<title>Document</title>
+	<style>
+        .je_resume{width:960px;height:900px;margin:0 auto;padding:30px 0;}
+        /*이력서 left*/
+        .resume_left{width:470px;height:700px;margin-top:70px;float:left;padding-right:10px}
+        .resume_left h2{width:98%;font:bold 1.5rem "Nanum Gothic";color:#366076;border-bottom:1px solid #366076;text-indent:3px}
+        .profile{width:100%;height:350px;padding-top:100px;}
+		.pro_photo{width:150px;height:150px;margin-left:160px;border:2px solid #232c55;transform:rotate(45deg);}
+        .pro_text{width:95%;height:220px;margin-top:30px;padding:5%;}
+		.pro_text h3::before{content:"◆ ";}
+		.pro_text h3{font:bold 1rem "Nanum Gothic";color:#366076;}
+		.pro_name{margin-left:10px;margin-top:20px;}
+		.pro_name dt{width:100px;height:auto;float:left;font-family: "arial";color:#686868;}
+		.pro_name dd{width:270px;height:auto;line-height:30px;font-family: "arial";color:#686868;}
+		.timeline{width:95%;height:400px;margin-top:50px;padding:5%;}
+		.timeline h3::before{content:"◆ ";}
+		.timeline h3{font:bold 1rem "Nanum Gothic";color:#366076;}
+		.timeline dl{width:auto;height:300px;border-left:1px solid #366076;padding-left:20px;margin-left:20px;margin-top:20px;}
+		.last_dt::before{content:"◆";color:#366076;position:relative;top:-5px;right:28px;}
+		.first_dt::before{content:"▲";font-size:1.5rem;color:#366076;position:relative;top:-5px;right:32px;}
+		
+		.timeline dl dt{font-family: "arial";color:#000;line-height:30px;}
+		.timeline dl dd{text-indent:18px;font-family: "arial";color:#aaa;} 
+        /*이력서 right*/
+        .resume_right{width:470px;height:800px;margin-top:70px;float:left;padding-left:10px;}
+        .resume_right h2{width:98%;font:bold 1.5rem "Nanum Gothic";color:#366076;float:right;border-bottom:1px solid #366076;text-align:right;}
+		.resume_right h3::before{content:"◆ ";}
+		.resume_right h3{font:bold 1rem "Nanum Gothic";color:#366076;padding-bottom:10px;}
+		.pro_name{margin-left:10px;margin-top:20px;}
+		.skill_box{width:100%;height:200px;margin-top:80px;}
+		.skill_box dl{width:100%;height:100%:}
+		.skill_box dl dt{width:220px;height:10px;float:left;margin-top:8px;margin-left:10px;color:#686868;}
+		.skill_box dl dd{margin-bottom:10px;}
+		.photoshop::after{content:"◆ ◆ ◆ ◆ ◆ ◇ ◇ ◇ ◇ ◇";color:#797979;}
+		.illustrator::after{content:"◆ ◆ ◆ ◆ ◆ ◆ ◇ ◇ ◇ ◇";color:#797979;}
+		.html::after{content:"◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◇ ◇";color:#797979}
+		.assistor::after{content:"◆ ◆ ◆ ◆ ◆ ◇ ◇ ◇ ◇ ◇";color:#797979}
+		.java::after{content:"◆ ◆ ◆ ◆ ◇ ◇ ◇ ◇ ◇ ◇";color:#797979}
+		.office::after{content:"◆ ◆ ◆ ◆ ◆ ◆ ◇ ◇ ◇ ◇";color:#797979}
+		.character_box{width:100%;height:200px;margin-top:40px;}
+		.character_box dl dt{width:220px;height:10px;float:left;margin-top:8px;margin-left:10px;color:#686868;}
+		.character_box dl dd{margin-bottom:10px;}
+		.char_01::after{content:"◆ ◆ ◆ ◆ ◆ ◆ ◆ ◇ ◇ ◇";color:#797979;}
+.char_02::after{content:"◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◇";color:#797979;}
+.char_03::after{content:"◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◇ ◇";color:#797979;}
+.char_04::after{content:"◆ ◆ ◆ ◆ ◆ ◇ ◇ ◇ ◇ ◇";color:#797979;}
+.char_05::after{content:"◆ ◆ ◆ ◆ ◇ ◇ ◇ ◇ ◇ ◇";color:#797979;}
+.char_06::after{content:"◆ ◆ ◆ ◆ ◆ ◆ ◆ ◇ ◇ ◇";color:#797979;}
+		.license_box{width:100%;height:160px;margin-top:40px;}
+		.license_box dl{margin-top:10px}
+		.license_box dt{width:100px;height:auto;float:left;font-family: "arial";color:#686868;}
+		.license_box dd{width:280px;height:auto;line-height:30px;font-family: "arial";color:#686868;}
+		.interest_box{width:100%;height:200px;margin-top:40px;}
+		.interest_box ul li{width:110px;height:150px;float:left;text-align:center;}
+	</style>
+	<script>
+	</script>
+</head>
+<body>
+	<div class="je_resume">
+		<div class="resume_left">
+			<h2>ABOUT ME</h2>
+			<div class="profile">
+			    <ul>
+			        <li class="pro_photo">
+			        </li>
+			        <li class="pro_text">
+			        	<h3>PROFILE</h3>
+			        	<dl class="pro_name">
+			        		<dt>Name.</dt>
+			        		<dd>김지은</dd>
+			        		<dt>Birthday.</dt>
+			        		<dd>1987. 02. 09.</dd>
+			        		<dt>Address.</dt>
+			        		<dd>서울시 은평구 응암동</dd>
+			        		<dt>Mobile.</dt>
+			        		<dd>010-6720-4419</dd>
+			        		<dt>E-mail</dt>
+			        		<dd>je2929@nate.com</dd>
+			        	</dl>
+			        </li>			   
+			    </ul>
+			</div>
+			<div class="timeline">
+				<h3>TIME LINE</h3>
+				<dl>
+					<dt class="first_dt">2016. 03.</dt>
+					<dd>그린컴퓨터아카데미 NCS 웹퍼블리셔 과정 수료</dd>
+					<dt class="last_dt">2012. 07. ~ 2015. 12.</dt>
+					<dd>프랜차이즈 카페 근무</dd>
+					<dt class="last_dt">2011. 05 ~ 2011. 12</dt>
+					<dd>송앤의원 근무</dd>
+					<dt class="last_dt">2007. 02.</dt>
+					<dd>동우대학교 졸업</dd>
+					<dt class="last_dt">2006. 11. ~ 2010. 12.</dt>
+					<dd>명동탑에스테틱 근무</dd>
+					<dt class="last_dt">2005. 02</dt>
+					<dd>양양여자고등학교 졸업</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="resume_right">
+			<h2>WEB PUBLISHER</h2>
+			<div class="skill_box">
+				<h3>SKILLS</h3>
+				<dl>
+					<dt>ADOBEPHOTOSHOP</dt><dd class="photoshop"></dd>
+					<dt>ADOBE ILLUSTRATOR</dt><dd class="illustrator"></dd>
+					<dt>HTML/CSS</dt><dd class="html"></dd>
+					<dt>ASSISTORPS</dt><dd class="assistor"></dd>
+					<dt>jQuery/JAVASCRIPT</dt><dd class="java"></dd>
+					<dt>OFFICE</dt><dd class="office"></dd>
+				</dl>
+			</div>
+			<div class="character_box">
+				<h3>CHARACTER</h3>
+				<dl>
+					<dt>긍정적</dt><dd class="char_01"></dd>
+					<dt>신중함</dt><dd class="char_02"></dd>
+					<dt>성실함</dt><dd class="char_03"></dd>
+					<dt>외향적</dt><dd class="char_04"></dd>
+					<dt>활동적</dt><dd class="char_05"></dd>
+					<dt>감각형</dt><dd class="char_06"></dd>
+				</dl>
+			</div>
+			<div class="license_box">
+				<h3>LICENSE</h3>
+				<dl>
+					<dt>2004. 04</dt><dd>워드프로세서 1급</dd>
+					<dt>2004. 09</dt><dd>컴퓨터 활용능력 2급</dd>
+					<dt>2016. 01</dt><dd>자동차운전면허 2종보통</dd>
+				</dl>
+			</div>
+			<div class="interest_box">
+				<h3>INTEREST</h3>
+				<ul>
+					<li><img src="./resume_img/piano.jpg" alt="">PIANO</li>
+					<li><img src="./resume_img/riding.jpg" alt="">RIDING</li>
+					<li><img src="./resume_img/coffee.jpg" alt="">COFFEE</li>
+					<li><img src="./resume_img/music.jpg" alt="">MUSIC</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
